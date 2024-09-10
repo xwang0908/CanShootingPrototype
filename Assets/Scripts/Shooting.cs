@@ -54,7 +54,7 @@ public class Shooting : MonoBehaviour
         if (hit.collider != null && hit.collider.CompareTag("Can"))
         {
             // Instead of destroying the can immediately, call the Hit() method
-            hit.collider.GetComponent<CanMovement>().Hit();
+            hit.collider.GetComponent<CanHit>().Hit(hit.point);
         }
     }
 }

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1583733395965625101}
   - component: {fileID: 7114739915346474021}
   - component: {fileID: 3050907212394114461}
-  - component: {fileID: 8810367825822433386}
   - component: {fileID: 3105663197442005378}
+  - component: {fileID: 8810367825822433386}
+  - component: {fileID: 3332869139877869552}
   m_Layer: 0
   m_Name: Can
   m_TagString: Can
@@ -101,8 +102,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0.1
+  m_GravityScale: 0.85
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -114,19 +115,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8810367825822433386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8853426244036799448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d38bfad64249d48f3abd12e91d957f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHits: 3
 --- !u!61 &3105663197442005378
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,5 +158,34 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.8, y: 1.4}
   m_EdgeRadius: 0
+--- !u!114 &8810367825822433386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853426244036799448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38bfad64249d48f3abd12e91d957f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHits: 3
+--- !u!114 &3332869139877869552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853426244036799448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95720df7baf1a454fa618cfcfa74dd3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpwardsSpeedAfterHitMin: 8
+  UpwardsSpeedAfterHitMax: 12
+  MaxHorizontalSpeedAfterHit: 4
+  MaxAngularSpeedAfterHit: 1080
