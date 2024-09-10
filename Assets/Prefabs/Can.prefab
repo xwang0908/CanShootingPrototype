@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 3549040679278705995}
   - component: {fileID: 5025637589410409016}
   - component: {fileID: -8695102564096172476}
+  - component: {fileID: -5157122155128583695}
+  - component: {fileID: -4246511295596516688}
+  - component: {fileID: -8212222231890411337}
   m_Layer: 0
   m_Name: Can
   m_TagString: Can
@@ -188,12 +191,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95720df7baf1a454fa618cfcfa74dd3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 3
   UpwardsSpeedAfterHitMin: 8
   UpwardsSpeedAfterHitMax: 12
   MaxHorizontalSpeedAfterHit: 4
   MaxAngularSpeedAfterHit: 3600
   AngularSpeedHitFactor: 1.3
-  Clip: {fileID: 8300000, guid: da80b0f72414848cb92b0bdf012c0a54, type: 3}
 --- !u!114 &3549040679278705995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,5 +238,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5dced01bf984c82880dac6195e72ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scale: {x: 0.2, y: 0.2}
+  Scale: {x: 0.35, y: 0.35}
   Duration: 0.15
+  UpdateScaleOnPlay: 1
+--- !u!114 &-5157122155128583695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853426244036799448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d427cff45acec4f55b7f64edf339e206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShrinkFactor: 0.25
+  Duration: 0.15
+  Delay: 0.2
+--- !u!114 &-4246511295596516688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853426244036799448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e1ecdeb4f1d4b528680a4bf980d5b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stamp: {fileID: 1730741154666410206, guid: 936a0a226eb3b4441b59007be0d6ee97, type: 3}
+  MinScale: 0.05
+  MaxScale: 0.2
+  SplatterRadius: 1
+  MinSplatterCount: 40
+  MaxSplatterCount: 50
+  RandomSplatDelay: 0.01
+  RandomColorLower: {r: 0.4166118, g: 0.43333918, b: 0.6117647, a: 1}
+  RandomColorUpper: {r: 0.6117647, g: 0.23002353, b: 0.56243193, a: 1}
+--- !u!114 &-8212222231890411337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853426244036799448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1490d571ecf4d8986234d02bcf96fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: c0ed5d7bb374a41d3a2fc863ace86516, type: 3}
+  - {fileID: 8300000, guid: 831bd95789e52412186885cc73b71bc8, type: 3}
+  - {fileID: 8300000, guid: 9c09f842edd714318b43a4c63dfd5724, type: 3}
+  SelectionMode: 1
+  MinPitch: 0.95
+  MaxPitch: 1.05
+  EffectVolume: 1

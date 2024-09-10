@@ -11,6 +11,9 @@ public class BounceScale : MonoBehaviour
     [Tooltip("Amount of time it takes to bounce there and back")] [SerializeField]
     private float Duration;
 
+    [Tooltip("If this is true, the starting scale will be updated each time the juice is played")] [SerializeField]
+    private bool UpdateScaleOnPlay;
+
     private float _timer;
     private Vector2 _startScale;
 
@@ -26,10 +29,12 @@ public class BounceScale : MonoBehaviour
 
     private IEnumerator BounceScaleCoroutine()
     {
+        if (UpdateScaleOnPlay)
+            _startScale = transform.localScale;
+        
         _timer = 0.0f;
 
         Vector2 endScale = _startScale + Scale;
-        print(_startScale + " " + endScale);
         
         // Bounce there
         while (_timer < Duration / 2.0f)

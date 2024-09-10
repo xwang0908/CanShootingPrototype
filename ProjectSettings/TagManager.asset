@@ -42,6 +42,9 @@ TagManager:
   - name: Background
     uniqueID: 2387911701
     locked: 0
+  - name: Stamps
+    uniqueID: 2814044501
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

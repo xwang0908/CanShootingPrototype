@@ -178,7 +178,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1907055595
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
@@ -446,6 +446,9 @@ GameObject:
   - component: {fileID: 1135355581}
   - component: {fileID: 1135355580}
   - component: {fileID: 1135355583}
+  - component: {fileID: 1135355584}
+  - component: {fileID: 1135355585}
+  - component: {fileID: 1135355586}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -546,6 +549,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scale: {x: 0.25, y: 0.25}
   Duration: 0.15
+  UpdateScaleOnPlay: 0
+--- !u!114 &1135355584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135355579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c235a110acf47a1837208e691ff053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stamp: {fileID: 2162405031237603890, guid: a972ef149860c4d16af9b1e6fdc1caec, type: 3}
+--- !u!114 &1135355585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135355579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e1ecdeb4f1d4b528680a4bf980d5b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stamp: {fileID: 1730741154666410206, guid: 936a0a226eb3b4441b59007be0d6ee97, type: 3}
+  MinScale: 0.05
+  MaxScale: 0.15
+  SplatterRadius: 0.75
+  MinSplatterCount: 10
+  MaxSplatterCount: 15
+  RandomSplatDelay: 0.005
+  RandomColorLower: {r: 0.4745098, g: 0.4862745, b: 0.6117647, a: 1}
+  RandomColorUpper: {r: 0.3468706, g: 0.36957583, b: 0.6117647, a: 1}
+--- !u!114 &1135355586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135355579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1490d571ecf4d8986234d02bcf96fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: cb68d428ad6de4f4db4dd92290f16190, type: 3}
+  SelectionMode: 0
+  MinPitch: 0.95
+  MaxPitch: 1.05
+  EffectVolume: 0.85
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -22,13 +22,14 @@ public class AudioManager : MonoBehaviour
     {
         
     }
-
-    public void PlayClip(AudioClip clip)
+    
+    public void PlayClip(AudioClip clip, float pitch=1.0f, float volume=1.0f)
     {
         AudioSource source = Instantiate(SourcePrefab);
         source.transform.position = Vector3.zero;
 
-        source.pitch *= Random.Range(0.85f, 1.15f);
+        source.pitch = pitch;
+        source.volume = volume;
         source.PlayOneShot(clip);
         
         Destroy(source.gameObject, clip.length);

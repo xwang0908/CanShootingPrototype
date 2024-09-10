@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CanHit : MonoBehaviour
 {
+    [Tooltip("The amount of times the Can can be hit before it is destroyed")] [SerializeField]
+    private int Health;
 
     [Tooltip("Minimum amount of upwards speed that the can should have when hit")] [SerializeField]
     private float UpwardsSpeedAfterHitMin;
@@ -18,15 +21,15 @@ public class CanHit : MonoBehaviour
 
     [Tooltip("Increases the max angular speed by this factor after each hit")] [SerializeField]
     private float AngularSpeedHitFactor;
-
-    [Tooltip("Audio clip to play when hit")] [SerializeField]
-    private AudioClip Clip;
-
+    
     private Rigidbody2D _rigidbody;
     private BoxCollider2D _collider;
     private HitSlow _slowdown;
     private HitFlash _hitFlash;
     private BounceScale _bounceScale;
+    private Shrink _shrink;
+    private SplatterStamp _blowUpSplatter;
+    private SoundEffect _soundEffect;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,9 @@ public class CanHit : MonoBehaviour
         _slowdown = GetComponent<HitSlow>();
         _hitFlash = GetComponent<HitFlash>();
         _bounceScale = GetComponent<BounceScale>();
+        _shrink = GetComponent<Shrink>();
+        _blowUpSplatter = GetComponent<SplatterStamp>();
+        _soundEffect = GetComponent<SoundEffect>();
     }
 
     // Update is called once per frame
@@ -72,6 +78,19 @@ public class CanHit : MonoBehaviour
         _slowdown.Play();
         _hitFlash.Play();
         _bounceScale.Play();
-        AudioManager.Instance.PlayClip(Clip);
+        _shrink.Play();
+        _soundEffect.Play();
+        
+        // Decrease health
+        Health--;
+        if (Health == 0)
+        {
+            _blowUpSplatter.Play();
+            // Turn off the important stuff and destroy after 10 seconds so the juice doesn't get interrupted
+            _rigidbody.simulated = false;
+            _collider.enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(gameObject, 10);
+        }
     }
 }
