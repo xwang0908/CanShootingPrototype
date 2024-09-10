@@ -19,14 +19,24 @@ public class CanHit : MonoBehaviour
     [Tooltip("Increases the max angular speed by this factor after each hit")] [SerializeField]
     private float AngularSpeedHitFactor;
 
+    [Tooltip("Audio clip to play when hit")] [SerializeField]
+    private AudioClip Clip;
+
     private Rigidbody2D _rigidbody;
     private BoxCollider2D _collider;
+    private HitSlow _slowdown;
+    private HitFlash _hitFlash;
+    private BounceScale _bounceScale;
     
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
+
+        _slowdown = GetComponent<HitSlow>();
+        _hitFlash = GetComponent<HitFlash>();
+        _bounceScale = GetComponent<BounceScale>();
     }
 
     // Update is called once per frame
@@ -57,5 +67,11 @@ public class CanHit : MonoBehaviour
         
         // Increase angular speed on the next hit
         MaxAngularSpeedAfterHit *= AngularSpeedHitFactor;
+        
+        // Do juice
+        _slowdown.Play();
+        _hitFlash.Play();
+        _bounceScale.Play();
+        AudioManager.Instance.PlayClip(Clip);
     }
 }

@@ -49,7 +49,11 @@
     <Compile Include="Assets/Scripts/CanHit.cs" />
     <Compile Include="Assets/Scripts/CanSpawner.cs" />
     <Compile Include="Assets/Scripts/CanMovement.cs" />
+    <Compile Include="Assets/Scripts/Audio/AudioManager.cs" />
+    <Compile Include="Assets/Scripts/Juice/HitFlash.cs" />
+    <Compile Include="Assets/Scripts/Juice/HitSlow.cs" />
     <Compile Include="Assets/Scripts/Shooting.cs" />
+    <Compile Include="Assets/Scripts/Juice/BounceScale.cs" />
     <None Include="Library/PackageCache/com.unity.modules.subsystems@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.jsonserialize@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.burst@1.8.17/package.json" />
