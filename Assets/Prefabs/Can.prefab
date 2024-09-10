@@ -189,3 +189,4 @@ MonoBehaviour:
   UpwardsSpeedAfterHitMax: 12
   MaxHorizontalSpeedAfterHit: 4
   MaxAngularSpeedAfterHit: 1080
+  AngularSpeedHitFactor: 1.3

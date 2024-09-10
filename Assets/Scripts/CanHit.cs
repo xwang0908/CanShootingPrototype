@@ -16,6 +16,9 @@ public class CanHit : MonoBehaviour
     [Tooltip("Maximum rotational speed after the hit when the can is hit, if the can was hit at the edge of its hitbox")] [SerializeField]
     private float MaxAngularSpeedAfterHit;
 
+    [Tooltip("Increases the max angular speed by this factor after each hit")] [SerializeField]
+    private float AngularSpeedHitFactor;
+
     private Rigidbody2D _rigidbody;
     private BoxCollider2D _collider;
     
@@ -50,7 +53,9 @@ public class CanHit : MonoBehaviour
         _rigidbody.AddForce(dvx * _rigidbody.mass * Vector2.right, ForceMode2D.Impulse);
         // Spin the can depending on the location of the hit
         float dva = -xDir * distFactor * MaxAngularSpeedAfterHit - _rigidbody.angularVelocity;
-        print(dva);
         _rigidbody.AddTorque(dva * _rigidbody.inertia);
+        
+        // Increase angular speed on the next hit
+        MaxAngularSpeedAfterHit *= AngularSpeedHitFactor;
     }
 }
