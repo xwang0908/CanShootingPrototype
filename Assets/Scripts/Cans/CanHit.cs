@@ -117,7 +117,9 @@ public class CanHit : MonoBehaviour
             _rigidbody.simulated = false;
             _collider.enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
+            this.enabled = false;
             CanManager.Instance.RemoveCan(this);
+            ScoreManager.Instance.Increment();
             Destroy(gameObject, 10);
         }
     }

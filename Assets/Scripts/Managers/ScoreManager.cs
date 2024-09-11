@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static ScoreManager Instance;
+    
+    [Tooltip("The UI element to display the score int")] [SerializeField]
+    private TextMeshProUGUI ScoreDisplay;
+    
+    private int _score;
+
+    private void Awake()
     {
-        
+        if (Instance is null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Increment()
     {
-        
+        _score++;
+        ScoreDisplay.text = _score + "";
     }
 }

@@ -25,7 +25,7 @@ public class CanIndicatorThreshold : MonoBehaviour
         {
             ind = Instantiate(IndicatorPrefab);
             ind.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + IndicatorVerticalPositionOffset);
-            ind.SetTarget(other.gameObject);
+            ind.SetTarget(other.GetComponent<CanHit>());
             _indicators[other] = ind;
             return;
         }

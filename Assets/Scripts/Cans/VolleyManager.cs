@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -48,7 +49,11 @@ public class VolleyManager : MonoBehaviour
     [Tooltip("Factor to reduce the delay by each time the entire schedule is completed")] [SerializeField]
     private float DelayReductionFactor;
 
+    [Tooltip("UI element that displays the total number of cans thrown")] [SerializeField]
+    private TextMeshProUGUI NumThrownCansDisplay;
+
     private Coroutine _throwCans;
+    private int _numThrownCans;
 
     void Start()
     {
@@ -82,6 +87,9 @@ public class VolleyManager : MonoBehaviour
                     if (tc.Spawner == SpawnerSide.Right || (tc.Spawner == SpawnerSide.Random && Random.Range(0, 2) == 0))
                         spawner = RightSpawner;
                     spawner.SpawnCan();
+                    
+                    _numThrownCans++;
+                    NumThrownCansDisplay.text = _numThrownCans + "";
 
                     yield return new WaitForSeconds(tc.DowntimeAfterThrow * delayReduction);
                 }
