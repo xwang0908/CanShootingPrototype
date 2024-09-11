@@ -13,7 +13,9 @@ public class MenuCanDestroyed : MonoBehaviour
     public enum MenuAction
     {
         StartGame,
-        Quit
+        Quit,
+        RestartGame,
+        ReturnToStartMenu
     }
     
     [Tooltip("The amount of time to wait between the can being destroyed and the event taking place")] [SerializeField]
@@ -32,7 +34,7 @@ public class MenuCanDestroyed : MonoBehaviour
 
     public void Hit()
     {
-        if (Action == MenuAction.Quit)
+        if (Action != MenuAction.StartGame)
             return;
         
         DongClangBoom[_dcbIndex].enabled = true;
@@ -46,6 +48,19 @@ public class MenuCanDestroyed : MonoBehaviour
 
     private IEnumerator DoYourThingCoroutine()
     {
+        if (Action == MenuAction.RestartGame)
+        {
+            GameManager.Instance.RestartGame();
+            yield break;
+        }
+
+        if (Action == MenuAction.ReturnToStartMenu)
+        {
+            yield return new WaitForSecondsRealtime(2.0f);
+            SceneManager.LoadScene(0);
+            yield break;
+        }
+        
         Text.enabled = false;
         ForegroundFade.Play();
         yield return new WaitForSeconds(SceneLoadDelay);

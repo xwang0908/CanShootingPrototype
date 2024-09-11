@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7578254587231529779}
   - component: {fileID: 8020314368452915419}
   - component: {fileID: -387635767178809104}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hit Splat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

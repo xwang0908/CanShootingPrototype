@@ -10,7 +10,7 @@ public class CanManager : MonoBehaviour
     private List<CanHit> _activeCans;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (Instance is null)
             Instance = this;
@@ -21,10 +21,10 @@ public class CanManager : MonoBehaviour
     
     void OnDestroy()
     {
-        Instance = null;
+        if(Instance == this)
+            Instance = null;
     }
-
-
+    
     public void AddCan(CanHit can)
     {
         _activeCans.Add(can);

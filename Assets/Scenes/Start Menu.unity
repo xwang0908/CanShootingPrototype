@@ -822,6 +822,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 654089594969742381, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
+      propertyPath: UpwardsSpeedAfterHitMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 654089594969742381, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
+      propertyPath: UpwardsSpeedAfterHitMin
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 654089594969742381, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
+      propertyPath: MaxHorizontalSpeedAfterHit
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 885795082994954847, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -836,7 +848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 938312398070531648, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
       propertyPath: m_Constraints
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3650727113420384464, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1539,6 +1551,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 654089594969742381, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
+      propertyPath: UpwardsSpeedAfterHitMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 654089594969742381, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
+      propertyPath: UpwardsSpeedAfterHitMin
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 654089594969742381, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
+      propertyPath: MaxHorizontalSpeedAfterHit
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 885795082994954847, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1549,7 +1573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 938312398070531648, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
       propertyPath: m_Constraints
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3650727113420384464, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
       propertyPath: m_LocalPosition.x

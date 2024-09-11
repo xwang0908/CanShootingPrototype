@@ -190,7 +190,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -308,6 +308,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3332869139877869552, guid: c0bd4172a34f541b8ac61a33ca39add5, type: 3}
+      propertyPath: UpwardsSpeedAfterHitMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332869139877869552, guid: c0bd4172a34f541b8ac61a33ca39add5, type: 3}
+      propertyPath: UpwardsSpeedAfterHitMin
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332869139877869552, guid: c0bd4172a34f541b8ac61a33ca39add5, type: 3}
+      propertyPath: MaxHorizontalSpeedAfterHit
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8853426244036799448, guid: c0bd4172a34f541b8ac61a33ca39add5, type: 3}
       propertyPath: m_Name
       value: Start Menu Can
@@ -347,4 +359,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneLoadDelay: 0.5
   Action: 0
+  DongClangBoom: []
   Text: {fileID: 7639121285730481165}
+  ForegroundFade: {fileID: 0}

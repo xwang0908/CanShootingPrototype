@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
 
     [Tooltip("UI element that displays the slash between the score and the number of cans thrown")] [SerializeField]
     private TextMeshProUGUI SlashDisplay;
-
+    
     [Tooltip("The volley manager, which determines the total number of cans thrown")] [SerializeField]
     private VolleyManager Volley;
 
@@ -35,20 +35,48 @@ public class ScoreManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        TotalNumCansDisplay.text = Volley.CountCans() + "";
+        TotalNumCansDisplay.text = Volley.NumScheduledCans() + "";
     }
 
     private void OnDestroy()
     {
-        Instance = null;
+        if(Instance == this)
+            Instance = null;
+    }
+
+    private void Update()
+    {
+        UpdateText();
+    }
+
+    public int GetScore()
+    {
+        return _score;
+    }
+
+    public Color GetScoreColor()
+    {
+        return Color.Lerp(NoScoreColor, MaxScoreColor, _score / (float)Volley.NumScheduledCans());
     }
 
     public void Increment()
     {
         _score++;
         ScoreDisplay.text = _score + "";
+        TotalNumCansDisplay.text = Volley.NumScheduledCans() + "";
 
-        Color c = Color.Lerp(NoScoreColor, MaxScoreColor, _score / (float)Volley.CountCans());
+        Color c = Color.Lerp(NoScoreColor, MaxScoreColor, _score / (float)Volley.NumScheduledCans());
+        ScoreDisplay.color = c;
+        SlashDisplay.color = c;
+        TotalNumCansDisplay.color = c;
+    }
+
+    private void UpdateText()
+    {
+        ScoreDisplay.text = _score + "";
+        TotalNumCansDisplay.text = Volley.NumScheduledCans() + "";
+
+        Color c = Color.Lerp(NoScoreColor, MaxScoreColor, _score / (float)Volley.NumScheduledCans());
         ScoreDisplay.color = c;
         SlashDisplay.color = c;
         TotalNumCansDisplay.color = c;

@@ -68,7 +68,8 @@ public class CanHit : MonoBehaviour
 
     private void OnDisable()
     {
-        CanManager.Instance.RemoveCan(this);
+        if(CanManager.Instance)
+            CanManager.Instance.RemoveCan(this);
     }
     
     public void Hit(Vector2 hitPos)

@@ -52,6 +52,7 @@ public class VolleyManager : MonoBehaviour
     
     private Coroutine _throwCans;
     private int _numThrownCans;
+    private int _numCompletedRounds;
 
     void Start()
     {
@@ -68,20 +69,28 @@ public class VolleyManager : MonoBehaviour
         StopCoroutine(_throwCans);
     }
     
-    public int CountCans()
+    public int NumScheduledCans()
     {
         int total = 0;
         foreach (Round r in Schedule)
             total += r.Cans.Count;
-        return total;
+        return total + total * _numCompletedRounds;
+    }
+
+    public int NumThrownCans()
+    {
+        return _numThrownCans;
     }
 
     public IEnumerator RunSchedule()
     {
         float delayReduction = 1.0f;
+        bool loopAgain = true;
+        _numCompletedRounds = -1;
         
-        while (true)
+        while (loopAgain)
         {
+            _numCompletedRounds++;
             foreach(Round r in Schedule)
             {
                 foreach (ThrowCan tc in r.Cans)
@@ -103,10 +112,15 @@ public class VolleyManager : MonoBehaviour
                     while (CanManager.Instance.NumActiveCans() > 0)
                         yield return null;
 
-                yield return new WaitForSeconds(r.DowntimeAfterRound);
+                // No waiting after completing the schedule the first time
+                if(_numCompletedRounds == 0)
+                    yield return new WaitForSeconds(r.DowntimeAfterRound);
             }
-
+            
             delayReduction *= DelayReductionFactor;
+            loopAgain = ScoreManager.Instance.GetScore() == _numThrownCans;
         }
+
+        GameManager.Instance.EndGame();
     }
 }

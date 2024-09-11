@@ -112,7 +112,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.1
-  m_GravityScale: 0.7
+  m_GravityScale: 0.8
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 3
-  UpwardsSpeedAfterHitMin: 8
-  UpwardsSpeedAfterHitMax: 9
+  UpwardsSpeedAfterHitMin: 7.5
+  UpwardsSpeedAfterHitMax: 8.5
   MaxHorizontalSpeedAfterHit: 6
   MaxAngularSpeedAfterHit: 3600
   AngularSpeedHitFactor: 1.3

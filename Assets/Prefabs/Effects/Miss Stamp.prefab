@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1864259031565847449}
   - component: {fileID: 5547240071964193819}
   - component: {fileID: -7978766835773955312}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Miss Stamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
