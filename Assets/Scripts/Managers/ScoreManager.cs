@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -35,6 +36,11 @@ public class ScoreManager : MonoBehaviour
             Destroy(gameObject);
 
         TotalNumCansDisplay.text = Volley.CountCans() + "";
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
     }
 
     public void Increment()

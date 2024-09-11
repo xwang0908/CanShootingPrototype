@@ -938,18 +938,6 @@
       <Project>{d2da017a-6555-e579-a778-d8826ac48160}</Project>
       <Name>Unity.2D.Common.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.csproj">
-      <Project>{fa17f844-aaf7-d051-0cf6-5ec1b8d44a3e}</Project>
-      <Name>Unity.RenderPipelines.Universal.Shaders</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Searcher.Editor.csproj">
-      <Project>{fe4b58c8-0aa2-22a9-0710-8ea1226624b5}</Project>
-      <Name>Unity.Searcher.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Aseprite.Editor.csproj">
-      <Project>{9f32b3fd-4cf7-d6c6-304a-1484840a1374}</Project>
-      <Name>Unity.2D.Aseprite.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
       <Project>{e16dab95-4858-50f2-dc8d-7469ebe0a1ff}</Project>
       <Name>Unity.TextMeshPro</Name>
@@ -957,6 +945,18 @@
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{524a01a0-32c4-b92d-2ab4-fdd4d45f92dd}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Searcher.Editor.csproj">
+      <Project>{fe4b58c8-0aa2-22a9-0710-8ea1226624b5}</Project>
+      <Name>Unity.Searcher.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.csproj">
+      <Project>{fa17f844-aaf7-d051-0cf6-5ec1b8d44a3e}</Project>
+      <Name>Unity.RenderPipelines.Universal.Shaders</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Aseprite.Editor.csproj">
+      <Project>{9f32b3fd-4cf7-d6c6-304a-1484840a1374}</Project>
+      <Name>Unity.2D.Aseprite.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj">
       <Project>{667f4e29-80fd-6ace-d43e-b83c2af07a90}</Project>

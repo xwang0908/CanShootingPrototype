@@ -18,6 +18,12 @@ public class CanManager : MonoBehaviour
             Destroy(gameObject);
         _activeCans = new List<CanHit>();
     }
+    
+    void OnDestroy()
+    {
+        Instance = null;
+    }
+
 
     public void AddCan(CanHit can)
     {
