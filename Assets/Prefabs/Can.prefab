@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -5157122155128583695}
   - component: {fileID: -4246511295596516688}
   - component: {fileID: -8212222231890411337}
+  - component: {fileID: 3681719346516574924}
   m_Layer: 0
   m_Name: Can
   m_TagString: Can
@@ -297,3 +298,15 @@ MonoBehaviour:
   MinPitch: 0.95
   MaxPitch: 1.05
   EffectVolume: 1
+--- !u!114 &3681719346516574924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853426244036799448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803a4945f19634756b2d465459ad958d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -46,11 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/Juice/SplatterStamp.cs" />
-    <Compile Include="Assets/Scripts/Juice/Fade.cs" />
     <Compile Include="Assets/Scripts/Juice/Shrink.cs" />
+    <Compile Include="Assets/Scripts/Juice/Fade.cs" />
     <Compile Include="Assets/Scripts/CursorManager.cs" />
     <Compile Include="Assets/Scripts/Juice/PositionShaker.cs" />
-    <Compile Include="Assets/Scripts/Juice/NewBehaviourScript.cs" />
     <Compile Include="Assets/Scripts/CanHit.cs" />
     <Compile Include="Assets/Scripts/CanSpawner.cs" />
     <Compile Include="Assets/Scripts/CanMovement.cs" />
@@ -58,6 +57,7 @@
     <Compile Include="Assets/Scripts/Audio/AudioManager.cs" />
     <Compile Include="Assets/Scripts/Juice/HitFlash.cs" />
     <Compile Include="Assets/Scripts/Juice/HitSlow.cs" />
+    <Compile Include="Assets/Scripts/Juice/CameraShaker.cs" />
     <Compile Include="Assets/Scripts/Shooting.cs" />
     <Compile Include="Assets/Scripts/Juice/BounceScale.cs" />
     <Compile Include="Assets/Scripts/Juice/MissStamp.cs" />
@@ -760,33 +760,33 @@
       <Project>{a4961ea1-0456-4533-86d8-3133e10cbf04}</Project>
       <Name>Unity.Burst.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.2D.Common.Path.Editor.csproj">
-      <Project>{9d7c1ff6-a671-a1ad-4450-c1cc0dfbf33b}</Project>
-      <Name>Unity.2D.Common.Path.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.Burst.csproj">
       <Project>{318863b4-3189-fa26-863c-ff040d1dea59}</Project>
       <Name>Unity.Burst</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Path.Editor.csproj">
+      <Project>{9d7c1ff6-a671-a1ad-4450-c1cc0dfbf33b}</Project>
+      <Name>Unity.2D.Common.Path.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{b4edf9dc-a4f3-1b7f-dca1-e2a9ff39f3a4}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
-      <Project>{b97acde2-5153-7e15-a574-ba6da3a2008b}</Project>
-      <Name>Unity.2D.Tilemap.Extras</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.PixelPerfect.Editor.csproj">
-      <Project>{23334b4a-3a1f-9c1d-11d4-fbe02292a1ba}</Project>
-      <Name>Unity.2D.PixelPerfect.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Runtime.csproj">
       <Project>{26ae8e1d-5498-cb34-7692-28bf50c64450}</Project>
       <Name>Unity.2D.Animation.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{b97acde2-5153-7e15-a574-ba6da3a2008b}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{64fc371c-1d95-3b89-4730-c9410d502b58}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.PixelPerfect.Editor.csproj">
+      <Project>{23334b4a-3a1f-9c1d-11d4-fbe02292a1ba}</Project>
+      <Name>Unity.2D.PixelPerfect.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{a898e8cd-ffa9-b5f4-1455-b763ac7ee11e}</Project>
@@ -824,17 +824,17 @@
       <Project>{60c5c9fe-635a-c726-755e-313a5bc666ce}</Project>
       <Name>Unity.SysrootPackage.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
-      <Project>{0c4041fd-e33d-d51c-2c2c-ff03479a6c07}</Project>
-      <Name>Unity.InternalAPIEditorBridge.001</Name>
+    <ProjectReference Include="Unity.Collections.csproj">
+      <Project>{1e3e730b-2835-8081-0ee5-811677b1e3fc}</Project>
+      <Name>Unity.Collections</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Psdimporter.Editor.csproj">
       <Project>{a047046f-7383-f97a-a56c-59a761c2e492}</Project>
       <Name>Unity.2D.Psdimporter.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Collections.csproj">
-      <Project>{1e3e730b-2835-8081-0ee5-811677b1e3fc}</Project>
-      <Name>Unity.Collections</Name>
+    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
+      <Project>{0c4041fd-e33d-d51c-2c2c-ff03479a6c07}</Project>
+      <Name>Unity.InternalAPIEditorBridge.001</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{069ace3e-a246-54d0-0cfc-96afa06a6717}</Project>

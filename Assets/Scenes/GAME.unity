@@ -447,9 +447,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf65fca9e9684edb9ef3350ad1106b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Duration: 0.5
-  Amplitude: 0.15
-  Frequency: 5
+  Duration: 0.15
+  Amplitude: 0.06
+  Frequency: 12
   NumberOfWaves: 5
   WaveShrinkingFactor: 0.8
   Target: {fileID: 519420032}

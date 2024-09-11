@@ -30,6 +30,7 @@ public class CanHit : MonoBehaviour
     private Shrink _shrink;
     private SplatterStamp _blowUpSplatter;
     private SoundEffect _soundEffect;
+    private CameraShaker _cameraShaker;
     
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,7 @@ public class CanHit : MonoBehaviour
         _shrink = GetComponent<Shrink>();
         _blowUpSplatter = GetComponent<SplatterStamp>();
         _soundEffect = GetComponent<SoundEffect>();
+        _cameraShaker = GetComponent<CameraShaker>();
     }
 
     // Update is called once per frame
@@ -80,6 +82,7 @@ public class CanHit : MonoBehaviour
         _bounceScale.Play();
         _shrink.Play();
         _soundEffect.Play();
+        _cameraShaker.Play();
         
         // Decrease health
         Health--;

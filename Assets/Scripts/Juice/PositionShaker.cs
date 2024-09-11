@@ -32,6 +32,9 @@ public class PositionShaker : MonoBehaviour
         
         public void Add(SineWave w)
         {
+            if (_waves is null)
+                _waves = new List<SineWave>();
+            
             _waves.Add(w);
         }
         
@@ -64,6 +67,8 @@ public class PositionShaker : MonoBehaviour
     
     private Curve _curve;
     private float _timer;
+    private float _currentShakeDuration;
+    private bool _isShaking;
     
     // Start is called before the first frame update
     void Start()
@@ -79,6 +84,16 @@ public class PositionShaker : MonoBehaviour
             wavelength /= WaveShrinkingFactor;
         }
     }
+
+    public void ReplenishShakeTime()
+    {
+        _currentShakeDuration += _timer;
+    }
+
+    public bool IsShaking()
+    {
+        return _isShaking;
+    }
     
     public void Play()
     {
@@ -87,19 +102,27 @@ public class PositionShaker : MonoBehaviour
 
     private IEnumerator ShakeCoroutine()
     {
+        Vector3 originalPosition = transform.localPosition;
+        _isShaking = true;
+        
         _timer = 0.0f;
-        Vector2 currentOffset = Vector2.zero;
+        _currentShakeDuration = Duration;
+        Vector3 currentOffset = Vector2.zero;
 		
-        while (_timer < Duration)
+        while (_timer < _currentShakeDuration)
         {
-            Vector2 pos = Target.transform.position;
+            Vector3 pos = Target.transform.localPosition;
             pos -= currentOffset;
-            currentOffset.x = _curve.Evaluate((_timer / Duration) * 2 * Mathf.PI);
-            currentOffset.y = _curve.Evaluate((_timer / Duration) * 2 * Mathf.PI + Mathf.PI / 4.0f);
+            float x = _timer * Frequency;
+            currentOffset.x = _curve.Evaluate((x / Duration) * 2 * Mathf.PI);
+            currentOffset.y = _curve.Evaluate((x / Duration) * 2 * Mathf.PI + Mathf.PI / 4.0f);
             pos += currentOffset;
-            Target.transform.position = pos;
+            Target.transform.localPosition = pos;
             _timer += Time.unscaledDeltaTime;
             yield return null;
         }
+
+        _isShaking = false;
+        transform.localPosition = originalPosition;
     }
 }
