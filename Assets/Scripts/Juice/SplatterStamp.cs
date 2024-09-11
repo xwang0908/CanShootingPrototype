@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
 using UnityEngine;
 
 public class SplatterStamp : MonoBehaviour
@@ -61,8 +60,9 @@ public class SplatterStamp : MonoBehaviour
             stamp.GetComponent<SpriteRenderer>().color =
                 Color.Lerp(RandomColorLower, RandomColorUpper, Random.Range(0.0f, 1.0f));
             // Wait a bit before the next splat
-            yield return new WaitForSecondsRealtime(Random.Range(0.0f, RandomSplatDelay));
+            // yield return new WaitForSecondsRealtime(Random.Range(0.0f, RandomSplatDelay));
         }
-
+        
+        yield return null;
     }
 }

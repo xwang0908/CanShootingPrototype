@@ -21,6 +21,9 @@ public class CanHit : MonoBehaviour
 
     [Tooltip("Increases the max angular speed by this factor after each hit")] [SerializeField]
     private float AngularSpeedHitFactor;
+
+    [Tooltip("Amount of time that the can is invincible after getting hit")] [SerializeField]
+    private float InvincibilityTime;
     
     private Rigidbody2D _rigidbody;
     private BoxCollider2D _collider;
@@ -31,6 +34,10 @@ public class CanHit : MonoBehaviour
     private SplatterStamp _blowUpSplatter;
     private SoundEffect _soundEffect;
     private CameraShaker _cameraShaker;
+    private ChromaticAberrationJuice _aberration;
+    private LensDistortionJuice _distortion;
+
+    private float _invincibilityTimer;
     
     // Start is called before the first frame update
     void Start()
@@ -45,16 +52,23 @@ public class CanHit : MonoBehaviour
         _blowUpSplatter = GetComponent<SplatterStamp>();
         _soundEffect = GetComponent<SoundEffect>();
         _cameraShaker = GetComponent<CameraShaker>();
+        _aberration = GetComponent<ChromaticAberrationJuice>();
+        _distortion = GetComponent<LensDistortionJuice>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        _invincibilityTimer -= Time.unscaledDeltaTime;
     }
 
     public void Hit(Vector2 hitPos)
     {
+        if (_invincibilityTimer <= 0.0f)
+            _invincibilityTimer = InvincibilityTime;
+        else
+            return;
+        
         // Apply upwards force to the can
         float upwardSpeed = Random.Range(UpwardsSpeedAfterHitMin, UpwardsSpeedAfterHitMax);
         float dvy = upwardSpeed - _rigidbody.velocity.y;
@@ -83,6 +97,8 @@ public class CanHit : MonoBehaviour
         _shrink.Play();
         _soundEffect.Play();
         _cameraShaker.Play();
+        _aberration.Play();
+        _distortion.Play();
         
         // Decrease health
         Health--;

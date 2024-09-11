@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: -4246511295596516688}
   - component: {fileID: -8212222231890411337}
   - component: {fileID: 3681719346516574924}
+  - component: {fileID: -5384456182884382927}
+  - component: {fileID: -3074517367161559138}
   m_Layer: 0
   m_Name: Can
   m_TagString: Can
@@ -38,7 +40,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.44, y: 0.4, z: -1}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 0.8652024, y: 1.7304049, z: 0.8652024}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,7 +112,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.1
-  m_GravityScale: 0.85
+  m_GravityScale: 0.7
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -194,10 +196,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 3
   UpwardsSpeedAfterHitMin: 8
-  UpwardsSpeedAfterHitMax: 12
-  MaxHorizontalSpeedAfterHit: 4
+  UpwardsSpeedAfterHitMax: 9
+  MaxHorizontalSpeedAfterHit: 6
   MaxAngularSpeedAfterHit: 3600
   AngularSpeedHitFactor: 1.3
+  InvincibilityTime: 0.33
 --- !u!114 &3549040679278705995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,10 +275,10 @@ MonoBehaviour:
   Stamp: {fileID: 1730741154666410206, guid: 936a0a226eb3b4441b59007be0d6ee97, type: 3}
   MinScale: 0.05
   MaxScale: 0.2
-  SplatterRadius: 1
-  MinSplatterCount: 50
-  MaxSplatterCount: 60
-  RandomSplatDelay: 0.01
+  SplatterRadius: 1.33
+  MinSplatterCount: 100
+  MaxSplatterCount: 110
+  RandomSplatDelay: 0
   RandomColorLower: {r: 0.4166118, g: 0.43333918, b: 0.6117647, a: 1}
   RandomColorUpper: {r: 0.6117647, g: 0.23002353, b: 0.56243193, a: 1}
 --- !u!114 &-8212222231890411337
@@ -310,3 +313,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803a4945f19634756b2d465459ad958d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Amplitude: 0.06
+--- !u!114 &-5384456182884382927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853426244036799448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e1e9373731141ef9627b25de742283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Intensity: 0.5
+  Duration: 0.15
+--- !u!114 &-3074517367161559138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853426244036799448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4636e2c5ce2e64baba2398331ed08fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Intensity: 0.33
+  Duration: 0.15

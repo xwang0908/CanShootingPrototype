@@ -51,7 +51,7 @@ public class PositionShaker : MonoBehaviour
     private float Duration;
 
     [Tooltip("The amplitude of the camera shake")] [SerializeField]
-    private float Amplitude;
+    public float Amplitude;
 
     [Tooltip("The frequency of the camera vibration")] [SerializeField]
     private float Frequency;
@@ -74,7 +74,7 @@ public class PositionShaker : MonoBehaviour
     void Start()
     {
         _curve = new Curve();
-        float amp = Amplitude;
+        float amp = 1.0f;
         float wavelength = 2 * Mathf.PI;
         for (int i = 0; i < NumberOfWaves; i++)
         {
@@ -87,7 +87,7 @@ public class PositionShaker : MonoBehaviour
 
     public void ReplenishShakeTime()
     {
-        _currentShakeDuration += _timer;
+        _currentShakeDuration = _timer + Duration;
     }
 
     public bool IsShaking()
@@ -114,8 +114,8 @@ public class PositionShaker : MonoBehaviour
             Vector3 pos = Target.transform.localPosition;
             pos -= currentOffset;
             float x = _timer * Frequency;
-            currentOffset.x = _curve.Evaluate((x / Duration) * 2 * Mathf.PI);
-            currentOffset.y = _curve.Evaluate((x / Duration) * 2 * Mathf.PI + Mathf.PI / 4.0f);
+            currentOffset.x = Amplitude * _curve.Evaluate((x / Duration) * 2 * Mathf.PI);
+            currentOffset.y = Amplitude * _curve.Evaluate((x / Duration) * 2 * Mathf.PI + Mathf.PI / 4.0f);
             pos += currentOffset;
             Target.transform.localPosition = pos;
             _timer += Time.unscaledDeltaTime;

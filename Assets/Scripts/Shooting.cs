@@ -10,6 +10,8 @@ public class Shooting : MonoBehaviour
     private MissStamp _missStamp;
     private SplatterStamp _hitStamp;
     private SoundEffect _shootSound;
+    private CameraShaker _cameraShaker;
+    private ParticleJuice _particles;
 
     private void Start()
     {
@@ -17,6 +19,8 @@ public class Shooting : MonoBehaviour
         _missStamp = GetComponent<MissStamp>();
         _hitStamp = GetComponent<SplatterStamp>();
         _shootSound = GetComponent<SoundEffect>();
+        _cameraShaker = GetComponent<CameraShaker>();
+        _particles = GetComponent<ParticleJuice>();
     }
 
     void Update()
@@ -40,6 +44,7 @@ public class Shooting : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
         _shootSound.Play();
+        _particles.Play();
         
         if (hit.collider != null && hit.collider.CompareTag("Can"))
         {
@@ -50,6 +55,7 @@ public class Shooting : MonoBehaviour
         else
         {
             _missStamp.Play();
+            _cameraShaker.Play();
         }
         
         _bounceScale.Play();
