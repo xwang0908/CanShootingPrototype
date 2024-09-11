@@ -45,23 +45,24 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.45f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/CursorManager.cs" />
+    <Compile Include="Assets/Scripts/CanSpawner.cs" />
+    <Compile Include="Assets/Scripts/CanMovement.cs" />
+    <Compile Include="Assets/Scripts/Juice/HitFlash.cs" />
+    <Compile Include="Assets/Scripts/Juice/HitSlow.cs" />
     <Compile Include="Assets/Scripts/Juice/SplatterStamp.cs" />
     <Compile Include="Assets/Scripts/Juice/Shrink.cs" />
     <Compile Include="Assets/Scripts/Juice/Fade.cs" />
-    <Compile Include="Assets/Scripts/CursorManager.cs" />
     <Compile Include="Assets/Scripts/Juice/PositionShaker.cs" />
     <Compile Include="Assets/Scripts/CanHit.cs" />
-    <Compile Include="Assets/Scripts/CanSpawner.cs" />
-    <Compile Include="Assets/Scripts/CanMovement.cs" />
     <Compile Include="Assets/Scripts/Juice/SoundEffect.cs" />
     <Compile Include="Assets/Scripts/Audio/AudioManager.cs" />
-    <Compile Include="Assets/Scripts/Juice/HitFlash.cs" />
-    <Compile Include="Assets/Scripts/Juice/HitSlow.cs" />
     <Compile Include="Assets/Scripts/Juice/CameraShaker.cs" />
     <Compile Include="Assets/Scripts/Shooting.cs" />
     <Compile Include="Assets/Scripts/Juice/BounceScale.cs" />
     <Compile Include="Assets/Scripts/Juice/MissStamp.cs" />
     <None Include="Library/PackageCache/com.unity.modules.subsystems@1.0.0/package.json" />
+    <None Include="Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.jsonserialize@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.burst@1.8.17/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.screencapture@1.0.0/package.json" />
@@ -73,6 +74,7 @@
     <None Include="Library/PackageCache/com.unity.2d.tilemap@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.ext.nunit@1.0.6/package.json" />
     <None Include="Library/PackageCache/com.unity.2d.pixel-perfect@5.0.3/package.json" />
+    <None Include="Library/PackageCache/com.unity.render-pipelines.universal-config@14.0.10/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.assetbundle@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.imgui@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.sysroot.linux-x86_64@2.0.9/package.json" />
@@ -83,10 +85,15 @@
     <None Include="Library/PackageCache/com.unity.sysroot@2.0.10/package.json" />
     <None Include="Library/PackageCache/com.unity.toolchain.macos-arm64-linux-x86_64@2.0.3/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.unitywebrequestassetbundle@1.0.0/package.json" />
+    <None Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/ValidationConfig.json" />
+    <None Include="Library/PackageCache/com.unity.render-pipelines.core@14.0.11/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.imageconversion@1.0.0/package.json" />
+    <None Include="Library/PackageCache/com.unity.shadergraph@14.0.11/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.unityanalytics@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.ide.rider@3.0.31/package.json" />
+    <None Include="Library/PackageCache/com.unity.searcher@4.9.2/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.video@1.0.0/package.json" />
+    <None Include="Library/PackageCache/com.unity.shadergraph@14.0.11/ValidationConfig.json" />
     <None Include="Library/PackageCache/com.unity.test-framework@1.1.33/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.particlesystem@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.toolchain.macos-arm64-linux-x86_64@2.0.3/ValidationConfig.json" />
@@ -98,6 +105,7 @@
     <None Include="Library/PackageCache/com.unity.2d.tilemap.extras@3.1.2/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.audio@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.physics@1.0.0/package.json" />
+    <None Include="Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/ValidationExceptions.json" />
     <None Include="Library/PackageCache/com.unity.modules.vehicles@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.unitywebrequestwww@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.unitywebrequestaudio@1.0.0/package.json" />
@@ -118,6 +126,7 @@
     <None Include="Library/PackageCache/com.unity.collections@1.2.4/ValidationExceptions.json" />
     <None Include="Library/PackageCache/com.unity.burst@1.8.17/Unity.Burst.Unsafe.xml" />
     <None Include="Library/PackageCache/com.unity.2d.psdimporter@8.0.5/package.json" />
+    <None Include="Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/ValidationConfig.json" />
     <None Include="Library/PackageCache/com.unity.modules.unitywebrequest@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.uielements@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.modules.ui@1.0.0/package.json" />
@@ -744,6 +753,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
+      <Project>{f37bc418-0762-c024-4931-26682e242998}</Project>
+      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Sysroot.Linux_x86_64.csproj">
       <Project>{1b39c634-47f3-1df8-d762-ceaf88b3e7d1}</Project>
       <Name>Unity.Sysroot.Linux_x86_64</Name>
@@ -752,9 +765,17 @@
       <Project>{4c6d40e2-8fe3-902d-6039-bbcb0835b9a2}</Project>
       <Name>Unity.2D.IK.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
+      <Project>{fca74f27-1cb6-e9fb-c2bd-d0c8979bcb28}</Project>
+      <Name>Unity.RenderPipelines.Core.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="PsdPlugin.csproj">
       <Project>{064c9864-a8d5-5638-593c-388c863c270e}</Project>
       <Name>PsdPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.csproj">
+      <Project>{bf1c5e09-3803-c73e-223e-b7fe6d747f9f}</Project>
+      <Name>Unity.RenderPipelines.Universal.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.Editor.csproj">
       <Project>{a4961ea1-0456-4533-86d8-3133e10cbf04}</Project>
@@ -767,6 +788,10 @@
     <ProjectReference Include="Unity.2D.Common.Path.Editor.csproj">
       <Project>{9d7c1ff6-a671-a1ad-4450-c1cc0dfbf33b}</Project>
       <Name>Unity.2D.Common.Path.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
+      <Project>{04b0b190-bf6d-dfbb-a3d0-58850d431350}</Project>
+      <Name>Unity.ShaderGraph.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{b4edf9dc-a4f3-1b7f-dca1-e2a9ff39f3a4}</Project>
@@ -800,6 +825,14 @@
       <Project>{b468c634-c595-74b8-c722-878b37da605e}</Project>
       <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Config.Runtime.csproj">
+      <Project>{f8c91113-5274-9f19-3e2f-92e4d9c094d2}</Project>
+      <Name>Unity.RenderPipelines.Universal.Config.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
+      <Project>{e3749b3a-369c-0018-9e1a-74a3bf30ad9f}</Project>
+      <Name>Unity.RenderPipelines.Core.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
       <Project>{2d1d6ddb-3ee1-0a05-45b9-c558573046d3}</Project>
       <Name>Unity.InternalAPIEngineBridge.001</Name>
@@ -812,6 +845,10 @@
       <Project>{cfec8611-3cfb-6d78-1809-39ffa5c05660}</Project>
       <Name>Unity.2D.Common.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.csproj">
+      <Project>{80711a6c-b3f7-6115-c9f8-669e2d37efe8}</Project>
+      <Name>Unity.RenderPipeline.Universal.ShaderLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
       <Project>{42d99f88-485e-d6e9-82c0-e0b77198b283}</Project>
       <Name>Unity.2D.Tilemap.Extras.Editor</Name>
@@ -819,6 +856,10 @@
     <ProjectReference Include="Unity.Toolchain.Macos-arm64-Linux-x86_64.csproj">
       <Project>{2b2f5ba9-b861-93ab-1817-f6872a37ea4a}</Project>
       <Name>Unity.Toolchain.Macos-arm64-Linux-x86_64</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
+      <Project>{c59d47ab-6cdb-e070-60cb-c8215e3de470}</Project>
+      <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.SysrootPackage.Editor.csproj">
       <Project>{60c5c9fe-635a-c726-755e-313a5bc666ce}</Project>
@@ -852,9 +893,21 @@
       <Project>{d2da017a-6555-e579-a778-d8826ac48160}</Project>
       <Name>Unity.2D.Common.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="PPv2URPConverters.csproj">
+      <Project>{41566f20-1522-6a30-28c0-2ec528edfafa}</Project>
+      <Name>PPv2URPConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.csproj">
+      <Project>{fa17f844-aaf7-d051-0cf6-5ec1b8d44a3e}</Project>
+      <Name>Unity.RenderPipelines.Universal.Shaders</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Aseprite.Editor.csproj">
       <Project>{9f32b3fd-4cf7-d6c6-304a-1484840a1374}</Project>
       <Name>Unity.2D.Aseprite.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Searcher.Editor.csproj">
+      <Project>{fe4b58c8-0aa2-22a9-0710-8ea1226624b5}</Project>
+      <Name>Unity.Searcher.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj">
       <Project>{667f4e29-80fd-6ace-d43e-b83c2af07a90}</Project>
@@ -871,6 +924,10 @@
     <ProjectReference Include="Unity.2D.IK.Editor.csproj">
       <Project>{b6de7f98-22fd-b08f-6036-54b3dfcba928}</Project>
       <Name>Unity.2D.IK.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
+      <Project>{8f8d4da1-8cc1-9045-99bd-00b5409fa52d}</Project>
+      <Name>Unity.RenderPipelines.Universal.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
