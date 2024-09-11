@@ -26,7 +26,8 @@ public class CanManager : MonoBehaviour
 
     public void RemoveCan(CanHit can)
     {
-        _activeCans.Remove(can);
+        if(_activeCans.Contains(can))
+            _activeCans.Remove(can);
     }
 
     public int NumActiveCans()

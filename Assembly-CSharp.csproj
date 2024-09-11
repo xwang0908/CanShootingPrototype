@@ -45,6 +45,7 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.45f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Managers/SceneSwitcher.cs" />
     <Compile Include="Assets/Scripts/Cans/CanDeathPlane.cs" />
     <Compile Include="Assets/Scripts/Cans/VolleyManager.cs" />
     <Compile Include="Assets/Scripts/Juice/HitFlash.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Assets/Scripts/Cans/CanIndicator.cs" />
     <Compile Include="Assets/Scripts/Juice/Shrink.cs" />
     <Compile Include="Assets/Scripts/Juice/Fade.cs" />
+    <Compile Include="Assets/Scripts/UI/MenuCanDestroyed.cs" />
     <Compile Include="Assets/Scripts/Juice/PositionShaker.cs" />
     <Compile Include="Assets/Scripts/Juice/ChromaticAberrationJuice.cs" />
     <Compile Include="Assets/Scripts/Cans/CanIndicatorThreshold.cs" />

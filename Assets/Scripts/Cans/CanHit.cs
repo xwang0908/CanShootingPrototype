@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -64,12 +66,11 @@ public class CanHit : MonoBehaviour
         _invincibilityTimer -= Time.unscaledDeltaTime;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         CanManager.Instance.RemoveCan(this);
     }
-
-
+    
     public void Hit(Vector2 hitPos)
     {
         if (_invincibilityTimer <= 0.0f)
@@ -112,6 +113,10 @@ public class CanHit : MonoBehaviour
         Health--;
         if (Health == 0)
         {
+            // Lazy menu stuff - 1:33am
+            if (GetComponent<MenuCanDestroyed>())
+                GetComponent<MenuCanDestroyed>().DoYourThing();
+
             _blowUpSplatter.Play();
             // Turn off the important stuff and destroy after 10 seconds so the juice doesn't get interrupted
             _rigidbody.simulated = false;
@@ -119,7 +124,8 @@ public class CanHit : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
             this.enabled = false;
             CanManager.Instance.RemoveCan(this);
-            ScoreManager.Instance.Increment();
+            if(!GetComponent<MenuCanDestroyed>())
+                ScoreManager.Instance.Increment();
             Destroy(gameObject, 10);
         }
     }

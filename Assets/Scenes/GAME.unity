@@ -1179,7 +1179,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1212509307
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
@@ -2027,6 +2027,7 @@ SceneRoots:
   - {fileID: 1397283376}
   - {fileID: 1797001937}
   - {fileID: 1013961643}
+  - {fileID: 493549196}
   - {fileID: 1621996283}
   - {fileID: 519420032}
   - {fileID: 775427364}
@@ -2036,7 +2037,6 @@ SceneRoots:
   - {fileID: 395535832}
   - {fileID: 322419540}
   - {fileID: 965068413}
-  - {fileID: 493549196}
   - {fileID: 1741868734}
   - {fileID: 462100989}
   - {fileID: 1517921770}

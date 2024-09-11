@@ -14,7 +14,5 @@ public class CursorManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
             Cursor.visible = false;
-        else if (Input.GetKeyDown(KeyCode.Escape))
-            Cursor.visible = true;
     }
 }

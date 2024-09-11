@@ -25,7 +25,6 @@ public class Shrink : MonoBehaviour
 
         _timer = 0.0f;
         Vector2 startScale = transform.localScale;
-        print("startScale: " + startScale);
         Vector2 endScale = (1 - ShrinkFactor) * startScale;
 
         while (_timer < Duration)
