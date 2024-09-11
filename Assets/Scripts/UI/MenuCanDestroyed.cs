@@ -20,10 +20,24 @@ public class MenuCanDestroyed : MonoBehaviour
     private float SceneLoadDelay;
 
     [Tooltip("The event that should take place when the menu can is destroyed")] [SerializeField]
-    private MenuAction Action; 
+    private MenuAction Action;
+
+    [Tooltip("For making the title appear awesome")] [SerializeField]
+    private TextMeshProUGUI[] DongClangBoom;
 
     [SerializeField] private TextMeshProUGUI Text;
-    [FormerlySerializedAs("Foreground")] [SerializeField] private Fade ForegroundFade;
+    [SerializeField] private Fade ForegroundFade;
+
+    private int _dcbIndex;
+
+    public void Hit()
+    {
+        if (Action == MenuAction.Quit)
+            return;
+        
+        DongClangBoom[_dcbIndex].enabled = true;
+        _dcbIndex++;
+    }
     
     public void DoYourThing()
     {

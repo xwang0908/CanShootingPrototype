@@ -109,6 +109,13 @@ public class CanHit : MonoBehaviour
         _aberration.Play();
         _distortion.Play();
         
+        // Lazy menu stuff - 2:17am, 2:32am
+        if (GetComponent<MenuCanDestroyed>())
+        {
+            _rigidbody.constraints = RigidbodyConstraints2D.None;
+            GetComponent<MenuCanDestroyed>().Hit();
+        }
+        
         // Decrease health
         Health--;
         if (Health == 0)
