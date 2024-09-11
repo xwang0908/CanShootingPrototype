@@ -45,25 +45,27 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.45f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/CursorManager.cs" />
-    <Compile Include="Assets/Scripts/CanSpawner.cs" />
-    <Compile Include="Assets/Scripts/CanMovement.cs" />
     <Compile Include="Assets/Scripts/Juice/HitFlash.cs" />
     <Compile Include="Assets/Scripts/Juice/HitSlow.cs" />
     <Compile Include="Assets/Scripts/Juice/SplatterStamp.cs" />
-    <Compile Include="Assets/Scripts/GameManager.cs" />
+    <Compile Include="Assets/Scripts/Cans/CanIndicator.cs" />
     <Compile Include="Assets/Scripts/Juice/Shrink.cs" />
     <Compile Include="Assets/Scripts/Juice/Fade.cs" />
     <Compile Include="Assets/Scripts/Juice/PositionShaker.cs" />
     <Compile Include="Assets/Scripts/Juice/ChromaticAberrationJuice.cs" />
-    <Compile Include="Assets/Scripts/CanHit.cs" />
+    <Compile Include="Assets/Scripts/Cans/CanIndicatorThreshold.cs" />
+    <Compile Include="Assets/Scripts/Managers/GameManager.cs" />
     <Compile Include="Assets/Scripts/Juice/ParticleJuice.cs" />
+    <Compile Include="Assets/Scripts/Cans/CanSpawner.cs" />
+    <Compile Include="Assets/Scripts/Cans/CanHit.cs" />
     <Compile Include="Assets/Scripts/Juice/SoundEffect.cs" />
     <Compile Include="Assets/Scripts/Audio/AudioManager.cs" />
+    <Compile Include="Assets/Scripts/Cans/CanMovement.cs" />
     <Compile Include="Assets/Scripts/Juice/CameraShaker.cs" />
-    <Compile Include="Assets/Scripts/Shooting.cs" />
+    <Compile Include="Assets/Scripts/Managers/CursorManager.cs" />
     <Compile Include="Assets/Scripts/Juice/LensDistortionJuice.cs" />
     <Compile Include="Assets/Scripts/Juice/BounceScale.cs" />
+    <Compile Include="Assets/Scripts/Shooting/Shooting.cs" />
     <Compile Include="Assets/Scripts/Juice/MissStamp.cs" />
     <None Include="Library/PackageCache/com.unity.modules.subsystems@1.0.0/package.json" />
     <None Include="Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/package.json" />

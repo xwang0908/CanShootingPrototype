@@ -352,8 +352,9 @@ GameObject:
   m_Component:
   - component: {fileID: 462100989}
   - component: {fileID: 462100988}
+  - component: {fileID: 462100990}
   m_Layer: 0
-  m_Name: Can Indicator
+  m_Name: Indicator Threshold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -388,7 +389,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -413,12 +414,26 @@ Transform:
   m_GameObject: {fileID: 462100987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 5.28, z: -0.09680895}
+  m_LocalPosition: {x: -0.01, y: 4.96, z: -0.09680895}
   m_LocalScale: {x: 17.9586, y: 0.1125, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462100990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462100987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d1533d61bda4b28bfad0ff1bd78c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IndicatorPrefab: {fileID: 8081353544070757429, guid: 4a7944351f254430881904c15da9586b, type: 3}
+  IndicatorVerticalPositionOffset: -0.68
 --- !u!1 &493549195
 GameObject:
   m_ObjectHideFlags: 0

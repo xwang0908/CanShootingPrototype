@@ -23,6 +23,11 @@ public class Fade : MonoBehaviour
             StartCoroutine(FadeCoroutine());
     }
 
+    public void Play()
+    {
+        StartCoroutine(FadeCoroutine());
+    }
+
     private IEnumerator FadeCoroutine()
     {
         if (Delay > 0.0f)
