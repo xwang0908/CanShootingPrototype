@@ -200,6 +200,7 @@ MonoBehaviour:
   MaxHorizontalSpeedAfterHit: 6
   MaxAngularSpeedAfterHit: 3600
   AngularSpeedHitFactor: 1.3
+  ExtraSloMoWhenDestroyed: 1
   InvincibilityTime: 0.33
 --- !u!114 &3549040679278705995
 MonoBehaviour:

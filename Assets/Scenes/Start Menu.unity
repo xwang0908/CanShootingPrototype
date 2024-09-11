@@ -1418,7 +1418,7 @@ GameObject:
   - component: {fileID: 1103807607}
   - component: {fileID: 1103807606}
   m_Layer: 5
-  m_Name: ETHAN
+  m_Name: ETHAN SAWYER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1440,8 +1440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 823, y: 2}
-  m_SizeDelta: {x: 200, y: 71.9}
+  m_AnchoredPosition: {x: 685, y: 2}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103807606
 MonoBehaviour:
@@ -1463,7 +1463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ETHAN
+  m_text: ETHAN SAWYER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5b45db4c71ea24d339dca686a7d9376e, type: 2}
   m_sharedMaterial: {fileID: 8980373824644325220, guid: 5b45db4c71ea24d339dca686a7d9376e, type: 2}
@@ -2862,7 +2862,7 @@ GameObject:
   - component: {fileID: 1905807082}
   - component: {fileID: 1905807081}
   m_Layer: 5
-  m_Name: 'ELSA '
+  m_Name: XINHE WANG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2884,8 +2884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 823, y: 69}
-  m_SizeDelta: {x: 200, y: 71.9}
+  m_AnchoredPosition: {x: 685, y: 69}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1905807081
 MonoBehaviour:
@@ -2907,7 +2907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ELSA
+  m_text: XINHE WANG
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5b45db4c71ea24d339dca686a7d9376e, type: 2}
   m_sharedMaterial: {fileID: 8980373824644325220, guid: 5b45db4c71ea24d339dca686a7d9376e, type: 2}

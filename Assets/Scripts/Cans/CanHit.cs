@@ -26,6 +26,9 @@ public class CanHit : MonoBehaviour
     [Tooltip("Increases the max angular speed by this factor after each hit")] [SerializeField]
     private float AngularSpeedHitFactor;
 
+    [Tooltip("Amount of extra slo mo when the can is destroyed")] [SerializeField]
+    private float ExtraSloMoWhenDestroyed;
+
     [Tooltip("Amount of time that the can is invincible after getting hit")] [SerializeField]
     private float InvincibilityTime;
     
@@ -100,6 +103,11 @@ public class CanHit : MonoBehaviour
         // Increase angular speed on the next hit
         MaxAngularSpeedAfterHit *= AngularSpeedHitFactor;
         
+        // Decrease health
+        Health--;
+
+        if (Health == 0)
+            _slowdown.Duration += ExtraSloMoWhenDestroyed;
         // Do juice
         _slowdown.Play();
         _hitFlash.Play();
@@ -117,8 +125,6 @@ public class CanHit : MonoBehaviour
             GetComponent<MenuCanDestroyed>().Hit();
         }
         
-        // Decrease health
-        Health--;
         if (Health == 0)
         {
             // Lazy menu stuff - 1:33am
