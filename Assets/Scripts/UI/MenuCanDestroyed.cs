@@ -5,6 +5,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
@@ -15,7 +16,8 @@ public class MenuCanDestroyed : MonoBehaviour
         StartGame,
         Quit,
         RestartGame,
-        ReturnToStartMenu
+        ReturnToStartMenu,
+        Credits
     }
     
     [Tooltip("The amount of time to wait between the can being destroyed and the event taking place")] [SerializeField]
@@ -27,18 +29,28 @@ public class MenuCanDestroyed : MonoBehaviour
     [Tooltip("For making the title appear awesome")] [SerializeField]
     private TextMeshProUGUI[] DongClangBoom;
 
+    [Tooltip("For making the credits appear awesome")] [SerializeField]
+    private TextMeshProUGUI[] Credits;
+
     [SerializeField] private TextMeshProUGUI Text;
     [SerializeField] private Fade ForegroundFade;
 
     private int _dcbIndex;
+    private int _creditsIndex;
 
     public void Hit()
     {
-        if (Action != MenuAction.StartGame)
-            return;
+        if (Action == MenuAction.StartGame && _dcbIndex < DongClangBoom.Length)
+        {
+            DongClangBoom[_dcbIndex].enabled = true;
+            _dcbIndex++;
+        }
+        else if (Action == MenuAction.Credits && _creditsIndex < Credits.Length)
+        {
+            Credits[_creditsIndex].enabled = true;
+            _creditsIndex++;
+        }
         
-        DongClangBoom[_dcbIndex].enabled = true;
-        _dcbIndex++;
     }
     
     public void DoYourThing()
@@ -48,6 +60,8 @@ public class MenuCanDestroyed : MonoBehaviour
 
     private IEnumerator DoYourThingCoroutine()
     {
+        Text.enabled = false;
+        
         if (Action == MenuAction.RestartGame)
         {
             GameManager.Instance.RestartGame();
@@ -60,8 +74,10 @@ public class MenuCanDestroyed : MonoBehaviour
             SceneManager.LoadScene(0);
             yield break;
         }
+
+        if (Action == MenuAction.Credits)
+            yield break;
         
-        Text.enabled = false;
         ForegroundFade.Play();
         yield return new WaitForSeconds(SceneLoadDelay);
 
