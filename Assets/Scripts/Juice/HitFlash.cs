@@ -15,11 +15,13 @@ public class HitFlash : MonoBehaviour
     [SerializeField] private float Duration;
     
     private SpriteRenderer _renderer;
+    private Color _originalColor;
     
     // Start is called before the first frame update
     void Start()
     {
         _renderer = GetComponent<SpriteRenderer>();
+        _originalColor = _renderer.color;
     }
 
     // Update is called once per frame
@@ -35,15 +37,15 @@ public class HitFlash : MonoBehaviour
 
     private IEnumerator FlashCoroutine()
     {
-        Color originalColor = _renderer.color;
-
         for (int i = 0; i < NumFlashes; i++)
         {
             _renderer.color = FlashColor;
             yield return new WaitForSecondsRealtime(Duration / NumFlashes / 2.0f);
             
-            _renderer.color = originalColor;
+            _renderer.color = _originalColor;
             yield return new WaitForSecondsRealtime(Duration / NumFlashes / 2.0f);
         }
+
+        _renderer.color = _originalColor;
     }
 }

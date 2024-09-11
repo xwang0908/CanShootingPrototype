@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayOnStart: 1
-  Delay: 10
+  Delay: 60
   DestroyAfterFade: 1
   Duration: 10
   TargetColor: {r: 0.4745098, g: 0.4862745, b: 0.6117647, a: 0}

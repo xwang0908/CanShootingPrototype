@@ -272,8 +272,8 @@ MonoBehaviour:
   MinScale: 0.05
   MaxScale: 0.2
   SplatterRadius: 1
-  MinSplatterCount: 40
-  MaxSplatterCount: 50
+  MinSplatterCount: 50
+  MaxSplatterCount: 60
   RandomSplatDelay: 0.01
   RandomColorLower: {r: 0.4166118, g: 0.43333918, b: 0.6117647, a: 1}
   RandomColorUpper: {r: 0.6117647, g: 0.23002353, b: 0.56243193, a: 1}
