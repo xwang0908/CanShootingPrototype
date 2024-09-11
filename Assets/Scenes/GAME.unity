@@ -321,7 +321,7 @@ Transform:
   m_GameObject: {fileID: 322419539}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.19320998, w: 0.9811575}
-  m_LocalPosition: {x: 7.94, y: -6.2, z: 0}
+  m_LocalPosition: {x: 7.01, y: -7.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -724,12 +724,56 @@ Transform:
   m_GameObject: {fileID: 965068411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.19320695, w: 0.9811581}
-  m_LocalPosition: {x: -10.66, y: -6.2, z: 0}
+  m_LocalPosition: {x: -7.01, y: -7.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -22.28}
+--- !u!1 &1013961641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013961643}
+  - component: {fileID: 1013961642}
+  m_Layer: 0
+  m_Name: Can Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1013961642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013961641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aeef4b1eda944421a640ae2fe001705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1013961643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013961641}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.106734, y: 5.0662904, z: -0.21347362}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135355579
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +970,282 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Particles: {fileID: 1366749481797606256, guid: 57be2f9f497a147a7b131737754b4c15, type: 3}
+--- !u!1 &1397283375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1397283376}
+  m_Layer: 0
+  m_Name: Score Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1397283376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397283375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.106734, y: 5.0662904, z: -0.21347362}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1741868732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741868734}
+  - component: {fileID: 1741868733}
+  - component: {fileID: 1741868735}
+  m_Layer: 0
+  m_Name: Can Death Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1741868733
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741868732}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1741868734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741868732}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -13.39, z: 0}
+  m_LocalScale: {x: 65.53112, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1741868735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741868732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dccf5b98df7e466d95ce6a551b800b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1797001935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797001937}
+  - component: {fileID: 1797001936}
+  m_Layer: 0
+  m_Name: Volley Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1797001936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797001935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c83f0adcb3194b2a9d30c10aad94a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Schedule:
+  - Cans:
+    - Spawner: 0
+      DowntimeAfterThrow: 0
+    DowntimeAfterRound: 1.5
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 1
+      DowntimeAfterThrow: 0
+    DowntimeAfterRound: 1.5
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 0
+      DowntimeAfterThrow: 2
+    - Spawner: 1
+      DowntimeAfterThrow: 0
+    DowntimeAfterRound: 3
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 2
+      DowntimeAfterThrow: 0
+    - Spawner: 2
+      DowntimeAfterThrow: 0
+    DowntimeAfterRound: 3
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 0
+      DowntimeAfterThrow: 0
+    - Spawner: 1
+      DowntimeAfterThrow: 1
+    - Spawner: 2
+      DowntimeAfterThrow: 0
+    DowntimeAfterRound: 3
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 0
+      DowntimeAfterThrow: 1
+    - Spawner: 0
+      DowntimeAfterThrow: 1
+    - Spawner: 1
+      DowntimeAfterThrow: 1
+    - Spawner: 1
+      DowntimeAfterThrow: 1
+    DowntimeAfterRound: 3
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 1
+      DowntimeAfterThrow: 1
+    - Spawner: 1
+      DowntimeAfterThrow: 1
+    - Spawner: 0
+      DowntimeAfterThrow: 1
+    - Spawner: 0
+      DowntimeAfterThrow: 1
+    DowntimeAfterRound: 3
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 1
+      DowntimeAfterThrow: 0
+    - Spawner: 0
+      DowntimeAfterThrow: 3
+    - Spawner: 0
+      DowntimeAfterThrow: 1
+    - Spawner: 0
+      DowntimeAfterThrow: 0
+    DowntimeAfterRound: 3
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 0
+      DowntimeAfterThrow: 1
+    - Spawner: 1
+      DowntimeAfterThrow: 2
+    - Spawner: 0
+      DowntimeAfterThrow: 0
+    - Spawner: 1
+      DowntimeAfterThrow: 0
+    DowntimeAfterRound: 3
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 1
+      DowntimeAfterThrow: 0
+    - Spawner: 0
+      DowntimeAfterThrow: 1
+    - Spawner: 0
+      DowntimeAfterThrow: 0
+    - Spawner: 1
+      DowntimeAfterThrow: 3
+    - Spawner: 2
+      DowntimeAfterThrow: 0.5
+    DowntimeAfterRound: 3
+    WhenToEndRound: 0
+  - Cans:
+    - Spawner: 1
+      DowntimeAfterThrow: 0
+    - Spawner: 0
+      DowntimeAfterThrow: 1
+    - Spawner: 0
+      DowntimeAfterThrow: 0
+    - Spawner: 1
+      DowntimeAfterThrow: 3
+    - Spawner: 0
+      DowntimeAfterThrow: 0.5
+    - Spawner: 1
+      DowntimeAfterThrow: 0.5
+    - Spawner: 0
+      DowntimeAfterThrow: 0.5
+    DowntimeAfterRound: 3
+    WhenToEndRound: 0
+  LeftSpawner: {fileID: 965068412}
+  RightSpawner: {fileID: 322419541}
+  DelayReductionFactor: 0.9
+--- !u!4 &1797001937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797001935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.106734, y: 5.0662904, z: -0.21347362}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -940,3 +1260,7 @@ SceneRoots:
   - {fileID: 775427364}
   - {fileID: 493549196}
   - {fileID: 462100989}
+  - {fileID: 1741868734}
+  - {fileID: 1797001937}
+  - {fileID: 1013961643}
+  - {fileID: 1397283376}

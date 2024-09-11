@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class CanHit : MonoBehaviour
 {
@@ -62,6 +64,12 @@ public class CanHit : MonoBehaviour
         _invincibilityTimer -= Time.unscaledDeltaTime;
     }
 
+    private void OnDestroy()
+    {
+        CanManager.Instance.RemoveCan(this);
+    }
+
+
     public void Hit(Vector2 hitPos)
     {
         if (_invincibilityTimer <= 0.0f)
@@ -109,6 +117,7 @@ public class CanHit : MonoBehaviour
             _rigidbody.simulated = false;
             _collider.enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
+            CanManager.Instance.RemoveCan(this);
             Destroy(gameObject, 10);
         }
     }

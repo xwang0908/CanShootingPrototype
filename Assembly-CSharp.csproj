@@ -45,8 +45,11 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.45f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Cans/CanDeathPlane.cs" />
+    <Compile Include="Assets/Scripts/Cans/VolleyManager.cs" />
     <Compile Include="Assets/Scripts/Juice/HitFlash.cs" />
     <Compile Include="Assets/Scripts/Juice/HitSlow.cs" />
+    <Compile Include="Assets/Scripts/Managers/ScoreManager.cs" />
     <Compile Include="Assets/Scripts/Juice/SplatterStamp.cs" />
     <Compile Include="Assets/Scripts/Cans/CanIndicator.cs" />
     <Compile Include="Assets/Scripts/Juice/Shrink.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Assets/Scripts/Cans/CanMovement.cs" />
     <Compile Include="Assets/Scripts/Juice/CameraShaker.cs" />
     <Compile Include="Assets/Scripts/Managers/CursorManager.cs" />
+    <Compile Include="Assets/Scripts/Cans/CanManager.cs" />
     <Compile Include="Assets/Scripts/Juice/LensDistortionJuice.cs" />
     <Compile Include="Assets/Scripts/Juice/BounceScale.cs" />
     <Compile Include="Assets/Scripts/Shooting/Shooting.cs" />
