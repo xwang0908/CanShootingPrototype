@@ -52,6 +52,7 @@
     <Compile Include="Assets/Scripts/Juice/HitFlash.cs" />
     <Compile Include="Assets/Scripts/Juice/HitSlow.cs" />
     <Compile Include="Assets/Scripts/Managers/ScoreManager.cs" />
+    <Compile Include="Assets/Scripts/Managers/TimeManager.cs" />
     <Compile Include="Assets/Scripts/Juice/SplatterStamp.cs" />
     <Compile Include="Assets/Scripts/Cans/CanIndicator.cs" />
     <Compile Include="Assets/Scripts/Juice/Shrink.cs" />

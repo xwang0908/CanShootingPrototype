@@ -15,22 +15,6 @@ public class HitSlow : MonoBehaviour
     
     public void Play()
     {
-        StartCoroutine(Slowdown());
-    }
-
-    private IEnumerator Slowdown()
-    {
-        _timer = 0.0f;
-        Time.timeScale = Scale;
-        Time.fixedDeltaTime = 0.02f * Scale;
-
-        while (_timer < Duration)
-        {
-            _timer += Time.unscaledDeltaTime;
-            yield return null;
-        }
-
-        Time.timeScale = 1.0f;
-        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        TimeManager.Instance.ChangeTimeScale(Scale, Duration);
     }
 }
