@@ -105,7 +105,7 @@ public class VolleyManager : MonoBehaviour
                     
                     _numThrownCans++;
 
-                    yield return new WaitForSeconds(tc.DowntimeAfterThrow * delayReduction);
+                    yield return new WaitForSecondsRealtime(tc.DowntimeAfterThrow * delayReduction);
                 }
                 
                 if(r.WhenToEndRound == EndRound.AllDestroyed)
@@ -114,7 +114,7 @@ public class VolleyManager : MonoBehaviour
 
                 // No waiting after completing the schedule the first time
                 if(_numCompletedRounds == 0)
-                    yield return new WaitForSeconds(r.DowntimeAfterRound);
+                    yield return new WaitForSecondsRealtime(r.DowntimeAfterRound);
             }
             
             delayReduction *= DelayReductionFactor;
