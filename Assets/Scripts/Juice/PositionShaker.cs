@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class PositionShaker : MonoBehaviour
+public class PositionShaker : MonoBehaviour, IJuiceEffect
 {
 
     // Uses radians

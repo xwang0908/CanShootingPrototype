@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePosition : MonoBehaviour
+public class MovePosition : MonoBehaviour, IJuiceEffect
 {
     public enum Style
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class MissStamp : MonoBehaviour
+public class MissStamp : MonoBehaviour, IJuiceEffect
 {
     [Tooltip("The sprite to leave behind after the shot was made")] [SerializeField]
     private GameObject Stamp;

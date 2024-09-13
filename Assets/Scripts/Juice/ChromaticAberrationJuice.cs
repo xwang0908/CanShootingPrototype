@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class ChromaticAberrationJuice : MonoBehaviour
+public class ChromaticAberrationJuice : MonoBehaviour, IJuiceEffect
 {
     [SerializeField] private float Intensity;
     [SerializeField] private float Duration;

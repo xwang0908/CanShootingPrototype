@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class LensDistortionJuice : MonoBehaviour
+public class LensDistortionJuice : MonoBehaviour, IJuiceEffect
 {
     [SerializeField] private float Intensity;
     [SerializeField] private float Duration;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraShaker : MonoBehaviour
+public class CameraShaker : MonoBehaviour, IJuiceEffect
 {
     [Tooltip("The amplitude of the camera shake")] [SerializeField]
     private float Amplitude;

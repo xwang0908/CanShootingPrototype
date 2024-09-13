@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitFlash : MonoBehaviour
+public class HitFlash : MonoBehaviour, IJuiceEffect
 {
 
     [Tooltip("Color to flash to when hit")] [SerializeField]

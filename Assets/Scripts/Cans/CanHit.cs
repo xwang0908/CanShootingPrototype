@@ -12,28 +12,18 @@ public class CanHit : MonoBehaviour
     [Tooltip("The amount of times the Can can be hit before it is destroyed")] [SerializeField]
     private int Health;
 
-    [Tooltip("Minimum amount of upwards speed that the can should have when hit")] [SerializeField]
-    private float UpwardsSpeedAfterHitMin;
-    [Tooltip("Maximum amount of upwards speed that the can should have when hit")] [SerializeField]
-    private float UpwardsSpeedAfterHitMax;
-
-    [Tooltip("Maximum horizontal speed after the hit, if the can was hit at the edge of its hitbox")] [SerializeField]
-    private float MaxHorizontalSpeedAfterHit;
-
-    [Tooltip("Maximum rotational speed after the hit when the can is hit, if the can was hit at the edge of its hitbox")] [SerializeField]
-    private float MaxAngularSpeedAfterHit;
-
-    [Tooltip("Increases the max angular speed by this factor after each hit")] [SerializeField]
-    private float AngularSpeedHitFactor;
 
     [Tooltip("Amount of extra slo mo when the can is destroyed")] [SerializeField]
     private float ExtraSloMoWhenDestroyed;
 
     [Tooltip("Amount of time that the can is invincible after getting hit")] [SerializeField]
     private float InvincibilityTime;
+
+    // TODO: replace this with getting all can CanHit components
+    private CanHitJuggle _juggle;
     
     private Rigidbody2D _rigidbody;
-    private BoxCollider2D _collider;
+    private Collider2D _collider;
     private HitSlow _slowdown;
     private HitFlash _hitFlash;
     private BounceScale _bounceScale;
@@ -49,9 +39,12 @@ public class CanHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _juggle = GetComponent<CanHitJuggle>();
+        
         _rigidbody = GetComponent<Rigidbody2D>();
-        _collider = GetComponent<BoxCollider2D>();
-
+        _collider = GetComponent<Collider2D>();
+        
+        
         _slowdown = GetComponent<HitSlow>();
         _hitFlash = GetComponent<HitFlash>();
         _bounceScale = GetComponent<BounceScale>();
@@ -82,26 +75,7 @@ public class CanHit : MonoBehaviour
         else
             return;
         
-        // Apply upwards force to the can
-        float upwardSpeed = Random.Range(UpwardsSpeedAfterHitMin, UpwardsSpeedAfterHitMax);
-        float dvy = upwardSpeed - _rigidbody.velocity.y;
-        _rigidbody.AddForce(dvy * _rigidbody.mass * Vector2.up, ForceMode2D.Impulse);
-        
-        // Figure out where the hit was relative to the center of mass, for later use
-        Vector2 comWorld = transform.TransformPoint(_rigidbody.centerOfMass);
-        Vector2 dx = comWorld - hitPos;
-        float distFactor = dx.magnitude / _collider.size.magnitude;
-        float xDir = Mathf.Abs(dx.x) / dx.x;
-        
-        // Set horizontal speed depending on where the can was hit
-        float dvx = xDir * distFactor * MaxHorizontalSpeedAfterHit - _rigidbody.velocity.x;
-        _rigidbody.AddForce(dvx * _rigidbody.mass * Vector2.right, ForceMode2D.Impulse);
-        // Spin the can depending on the location of the hit
-        float dva = -xDir * distFactor * MaxAngularSpeedAfterHit - _rigidbody.angularVelocity;
-        _rigidbody.AddTorque(dva * _rigidbody.inertia);
-        
-        // Increase angular speed on the next hit
-        MaxAngularSpeedAfterHit *= AngularSpeedHitFactor;
+        _juggle.Hit(hitPos);
         
         // Decrease health
         Health--;

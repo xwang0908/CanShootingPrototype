@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3105663197442005378}
   - component: {fileID: 8810367825822433386}
   - component: {fileID: 3332869139877869552}
+  - component: {fileID: 4988279934962166326}
   - component: {fileID: 3549040679278705995}
   - component: {fileID: 5025637589410409016}
   - component: {fileID: -8695102564096172476}
@@ -195,13 +196,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 3
-  UpwardsSpeedAfterHitMin: 7.5
-  UpwardsSpeedAfterHitMax: 8.5
-  MaxHorizontalSpeedAfterHit: 6
-  MaxAngularSpeedAfterHit: 3600
-  AngularSpeedHitFactor: 1.3
   ExtraSloMoWhenDestroyed: 1
   InvincibilityTime: 0.33
+--- !u!114 &4988279934962166326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8853426244036799448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7ad8af3df38479d97408c7bb447ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpwardsSpeedAfterHitMin: 7
+  UpwardsSpeedAfterHitMax: 8
+  MaxHorizontalSpeedAfterHit: 5
+  MaxAngularSpeedAfterHit: 2160
+  AngularSpeedHitFactor: 1.5
 --- !u!114 &3549040679278705995
 MonoBehaviour:
   m_ObjectHideFlags: 0

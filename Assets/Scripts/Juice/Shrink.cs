@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class Shrink : MonoBehaviour
+public class Shrink : MonoBehaviour, IJuiceEffect
 {
 
     [Tooltip("The factor to shrink by when played")] [SerializeField]

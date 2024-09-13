@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Internal;
 using UnityEngine.Serialization;
 
-public class SoundEffect : MonoBehaviour
+public class SoundEffect : MonoBehaviour, IJuiceEffect
 {
     public enum ClipSelectionMode
     {

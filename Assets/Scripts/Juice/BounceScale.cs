@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BounceScale : MonoBehaviour
+public class BounceScale : MonoBehaviour, IJuiceEffect
 {
     [Tooltip("Maximum scale when playing")] [SerializeField]
     private Vector2 Scale;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleJuice : MonoBehaviour
+public class ParticleJuice : MonoBehaviour, IJuiceEffect
 {
     [SerializeField] ParticleSystem Particles;
     

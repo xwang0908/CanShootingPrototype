@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitSlow : MonoBehaviour
+public class HitSlow : MonoBehaviour, IJuiceEffect
 {
 
     [Tooltip("Amount of time to slow down for")] [SerializeField]

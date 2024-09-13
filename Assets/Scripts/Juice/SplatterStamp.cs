@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SplatterStamp : MonoBehaviour
+public class SplatterStamp : MonoBehaviour, IJuiceEffect
 {
     [Tooltip("The sprite to leave behind after the can was hit")] [SerializeField]
     private GameObject Stamp;

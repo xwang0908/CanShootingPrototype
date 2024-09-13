@@ -49,9 +49,11 @@
     <Compile Include="Assets/Scripts/Cans/CanDeathPlane.cs" />
     <Compile Include="Assets/Scripts/Cans/VolleyManager.cs" />
     <Compile Include="Assets/Scripts/Juice/MovePosition.cs" />
+    <Compile Include="Assets/Scripts/Cans/CanHitEffect.cs" />
     <Compile Include="Assets/Scripts/Juice/HitFlash.cs" />
     <Compile Include="Assets/Scripts/Juice/HitSlow.cs" />
     <Compile Include="Assets/Scripts/Managers/ScoreManager.cs" />
+    <Compile Include="Assets/Scripts/Cans/CanHitJuggle.cs" />
     <Compile Include="Assets/Scripts/Managers/TimeManager.cs" />
     <Compile Include="Assets/Scripts/Juice/SplatterStamp.cs" />
     <Compile Include="Assets/Scripts/Cans/CanIndicator.cs" />
@@ -66,6 +68,7 @@
     <Compile Include="Assets/Scripts/Cans/CanSpawner.cs" />
     <Compile Include="Assets/Scripts/Cans/CanHit.cs" />
     <Compile Include="Assets/Scripts/Juice/SoundEffect.cs" />
+    <Compile Include="Assets/Scripts/Juice/IJuiceEffect.cs" />
     <Compile Include="Assets/Scripts/Audio/AudioManager.cs" />
     <Compile Include="Assets/Scripts/Cans/CanMovement.cs" />
     <Compile Include="Assets/Scripts/Juice/CameraShaker.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="Assets/Scripts/Cans/CanManager.cs" />
     <Compile Include="Assets/Scripts/Juice/LensDistortionJuice.cs" />
     <Compile Include="Assets/Scripts/Juice/BounceScale.cs" />
+    <Compile Include="Assets/Scripts/Cans/CanHitJuice.cs" />
     <Compile Include="Assets/Scripts/Shooting/Shooting.cs" />
     <Compile Include="Assets/Scripts/Juice/MissStamp.cs" />
     <None Include="Library/PackageCache/com.unity.modules.subsystems@1.0.0/package.json" />

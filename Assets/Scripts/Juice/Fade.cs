@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class Fade : MonoBehaviour
+public class Fade : MonoBehaviour, IJuiceEffect
 {
     [SerializeField] private bool PlayOnStart;
     [SerializeField] private float Delay;
