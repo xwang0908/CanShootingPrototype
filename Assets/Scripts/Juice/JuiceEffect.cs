@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IJuiceEffect
+public abstract class JuiceEffect : MonoBehaviour
 {
-    public void Play();
+    public abstract void Play();
 }

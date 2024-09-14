@@ -28,7 +28,7 @@ public class CanHitJuggle : CanHitEffect
         _collider = GetComponent<BoxCollider2D>();
     }
     
-    public void Hit(Vector2 hitPos)
+    public override void Hit(Vector2 hitPos)
     {
         // Apply upwards force to the can
         float upwardSpeed = Random.Range(UpwardsSpeedAfterHitMin, UpwardsSpeedAfterHitMax);

@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class Shrink : MonoBehaviour, IJuiceEffect
+public class Shrink : JuiceEffect
 {
 
+    [Tooltip("The transform to apply the scale changes to")] [SerializeField]
+    private Transform Target;
+    
     [Tooltip("The factor to shrink by when played")] [SerializeField]
     private float ShrinkFactor;
 
@@ -14,7 +17,7 @@ public class Shrink : MonoBehaviour, IJuiceEffect
 
     private float _timer;
 
-    public void Play()
+    public override void Play()
     {
         StartCoroutine(ShrinkCoroutine());
     }
@@ -24,17 +27,17 @@ public class Shrink : MonoBehaviour, IJuiceEffect
         yield return new WaitForSecondsRealtime(Delay);
 
         _timer = 0.0f;
-        Vector2 startScale = transform.localScale;
+        Vector2 startScale = Target.transform.localScale;
         Vector2 endScale = (1 - ShrinkFactor) * startScale;
 
         while (_timer < Duration)
         {
-            transform.localScale = Vector2.Lerp(startScale, endScale, _timer / Duration);
+            Target.transform.localScale = Vector2.Lerp(startScale, endScale, _timer / Duration);
             _timer += Time.unscaledDeltaTime;
             yield return null;
         }
 
         // Make sure the scale matches the target at the end
-        transform.localScale = endScale;
+        Target.transform.localScale = endScale;
     }
 }

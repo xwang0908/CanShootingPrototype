@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BounceScale : MonoBehaviour, IJuiceEffect
+public class BounceScale : JuiceEffect
 {
+    [Tooltip("The transform to apply the scale bounce to")] [SerializeField]
+    private Transform Target;
+    
     [Tooltip("Maximum scale when playing")] [SerializeField]
     private Vector2 Scale;
 
@@ -19,10 +22,10 @@ public class BounceScale : MonoBehaviour, IJuiceEffect
 
     private void Start()
     {
-        _startScale = transform.localScale;
+        _startScale = Target.transform.localScale;
     }
 
-    public void Play()
+    public override void Play()
     {
         StartCoroutine(BounceScaleCoroutine());
     }
@@ -30,7 +33,7 @@ public class BounceScale : MonoBehaviour, IJuiceEffect
     private IEnumerator BounceScaleCoroutine()
     {
         if (UpdateScaleOnPlay)
-            _startScale = transform.localScale;
+            _startScale = Target.transform.localScale;
         
         _timer = 0.0f;
 
@@ -39,7 +42,7 @@ public class BounceScale : MonoBehaviour, IJuiceEffect
         // Bounce there
         while (_timer < Duration / 2.0f)
         {
-            transform.localScale = Vector2.Lerp(_startScale, endScale, _timer / (Duration / 2.0f));
+            Target.transform.localScale = Vector2.Lerp(_startScale, endScale, _timer / (Duration / 2.0f));
             _timer += Time.unscaledDeltaTime;
             yield return null;
         }
@@ -48,12 +51,12 @@ public class BounceScale : MonoBehaviour, IJuiceEffect
         // Bounce back
         while (_timer < Duration / 2.0f)
         {
-            transform.localScale = Vector2.Lerp(endScale, _startScale, _timer / (Duration / 2.0f));
+            Target.transform.localScale = Vector2.Lerp(endScale, _startScale, _timer / (Duration / 2.0f));
             _timer += Time.unscaledDeltaTime;
             yield return null;
         }
 
         // Make sure rapid clicking doesn't make the scale go out of control
-        transform.localScale = _startScale;
+        Target.transform.localScale = _startScale;
     }
 }

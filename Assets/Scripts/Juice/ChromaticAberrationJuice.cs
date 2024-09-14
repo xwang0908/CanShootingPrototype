@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class ChromaticAberrationJuice : MonoBehaviour, IJuiceEffect
+public class ChromaticAberrationJuice : JuiceEffect
 {
     [SerializeField] private float Intensity;
     [SerializeField] private float Duration;
@@ -22,7 +22,7 @@ public class ChromaticAberrationJuice : MonoBehaviour, IJuiceEffect
             _aberration = temp;
     }
 
-    public void Play()
+    public override void Play()
     {
         StartCoroutine(ChromaticAberrationCoroutine());
     }

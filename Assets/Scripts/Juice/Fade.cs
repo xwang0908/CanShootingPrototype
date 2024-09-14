@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-public class Fade : MonoBehaviour, IJuiceEffect
+public class Fade : JuiceEffect
 {
     [SerializeField] private bool PlayOnStart;
     [SerializeField] private float Delay;
@@ -23,7 +23,7 @@ public class Fade : MonoBehaviour, IJuiceEffect
             StartCoroutine(FadeCoroutine());
     }
 
-    public void Play()
+    public override void Play()
     {
         StartCoroutine(FadeCoroutine());
     }

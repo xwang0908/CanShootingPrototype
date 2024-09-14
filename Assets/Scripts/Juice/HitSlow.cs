@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitSlow : MonoBehaviour, IJuiceEffect
+public class HitSlow : JuiceEffect
 {
 
     [Tooltip("Amount of time to slow down for")] [SerializeField]
@@ -13,7 +13,7 @@ public class HitSlow : MonoBehaviour, IJuiceEffect
 
     private float _timer;
     
-    public void Play()
+    public override void Play()
     {
         TimeManager.Instance.ChangeTimeScale(Scale, Duration);
     }

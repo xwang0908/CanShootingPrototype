@@ -63,12 +63,12 @@
     <Compile Include="Assets/Scripts/Juice/PositionShaker.cs" />
     <Compile Include="Assets/Scripts/Juice/ChromaticAberrationJuice.cs" />
     <Compile Include="Assets/Scripts/Cans/CanIndicatorThreshold.cs" />
+    <Compile Include="Assets/Scripts/Juice/JuiceEffect.cs" />
     <Compile Include="Assets/Scripts/Managers/GameManager.cs" />
     <Compile Include="Assets/Scripts/Juice/ParticleJuice.cs" />
     <Compile Include="Assets/Scripts/Cans/CanSpawner.cs" />
     <Compile Include="Assets/Scripts/Cans/CanHit.cs" />
     <Compile Include="Assets/Scripts/Juice/SoundEffect.cs" />
-    <Compile Include="Assets/Scripts/Juice/IJuiceEffect.cs" />
     <Compile Include="Assets/Scripts/Audio/AudioManager.cs" />
     <Compile Include="Assets/Scripts/Cans/CanMovement.cs" />
     <Compile Include="Assets/Scripts/Juice/CameraShaker.cs" />

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,41 +20,26 @@ public class CanHit : MonoBehaviour
     [Tooltip("Amount of time that the can is invincible after getting hit")] [SerializeField]
     private float InvincibilityTime;
 
-    // TODO: replace this with getting all can CanHit components
-    private CanHitJuggle _juggle;
+    private CanHitEffect[] _anyHitEffects;
+    private CanHitEffect[] _destroyEffects;
+    private CanHitEffect[] _nonDestroyEffects;
     
     private Rigidbody2D _rigidbody;
     private Collider2D _collider;
-    private HitSlow _slowdown;
-    private HitFlash _hitFlash;
-    private BounceScale _bounceScale;
-    private Shrink _shrink;
-    private SplatterStamp _blowUpSplatter;
-    private SoundEffect _soundEffect;
-    private CameraShaker _cameraShaker;
-    private ChromaticAberrationJuice _aberration;
-    private LensDistortionJuice _distortion;
 
     private float _invincibilityTimer;
     
     // Start is called before the first frame update
     void Start()
     {
-        _juggle = GetComponent<CanHitJuggle>();
+        // Collect all the hit effects
+        List<CanHitEffect> allEffects = GetComponents<CanHitEffect>().ToList();
+        _anyHitEffects = allEffects.Where(x => x.WhenToPlay == CanHitEffect.HitType.Any).ToArray();
+        _destroyEffects = allEffects.Where(x => x.WhenToPlay == CanHitEffect.HitType.Destroy).ToArray();
+        _nonDestroyEffects = allEffects.Where(x => x.WhenToPlay == CanHitEffect.HitType.NonDestroy).ToArray();
         
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
-        
-        
-        _slowdown = GetComponent<HitSlow>();
-        _hitFlash = GetComponent<HitFlash>();
-        _bounceScale = GetComponent<BounceScale>();
-        _shrink = GetComponent<Shrink>();
-        _blowUpSplatter = GetComponent<SplatterStamp>();
-        _soundEffect = GetComponent<SoundEffect>();
-        _cameraShaker = GetComponent<CameraShaker>();
-        _aberration = GetComponent<ChromaticAberrationJuice>();
-        _distortion = GetComponent<LensDistortionJuice>();
     }
 
     // Update is called once per frame
@@ -74,23 +60,24 @@ public class CanHit : MonoBehaviour
             _invincibilityTimer = InvincibilityTime;
         else
             return;
-        
-        _juggle.Hit(hitPos);
+
+        // Do effects that apply to all hits
+        foreach(CanHitEffect hitEffect in _anyHitEffects)
+            hitEffect.Hit(hitPos);
         
         // Decrease health
         Health--;
-
+        
         if (Health == 0)
-            _slowdown.Duration += ExtraSloMoWhenDestroyed;
-        // Do juice
-        _slowdown.Play();
-        _hitFlash.Play();
-        _bounceScale.Play();
-        _shrink.Play();
-        _soundEffect.Play();
-        _cameraShaker.Play();
-        _aberration.Play();
-        _distortion.Play();
+        {
+            foreach(CanHitEffect hitEffect in _destroyEffects)
+                hitEffect.Hit(hitPos);
+        }
+        else
+        {
+            foreach(CanHitEffect hitEffect in _nonDestroyEffects)
+                hitEffect.Hit(hitPos);
+        }
         
         // Lazy menu stuff - 2:17am, 2:32am
         if (GetComponent<MenuCanDestroyed>())
@@ -105,7 +92,6 @@ public class CanHit : MonoBehaviour
             if (GetComponent<MenuCanDestroyed>())
                 GetComponent<MenuCanDestroyed>().DoYourThing();
 
-            _blowUpSplatter.Play();
             // Turn off the important stuff and destroy after 10 seconds so the juice doesn't get interrupted
             _rigidbody.simulated = false;
             _collider.enabled = false;

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraShaker : MonoBehaviour, IJuiceEffect
+public class CameraShaker : JuiceEffect
 {
     [Tooltip("The amplitude of the camera shake")] [SerializeField]
     private float Amplitude;
     
-    public void Play()
+    public override void Play()
     {
         PositionShaker shaker = Camera.main.GetComponent<PositionShaker>();
         shaker.Amplitude = Amplitude;

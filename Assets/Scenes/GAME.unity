@@ -1996,6 +1996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5dced01bf984c82880dac6195e72ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 1135355582}
   Scale: {x: 0.25, y: 0.25}
   Duration: 0.15
   UpdateScaleOnPlay: 0
@@ -3058,6 +3059,10 @@ PrefabInstance:
     - target: {fileID: 3294860074845894548, guid: c43ad1e0cc9ed4017b09c1c059dfb232, type: 3}
       propertyPath: m_Name
       value: Volley Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294860074845894548, guid: c43ad1e0cc9ed4017b09c1c059dfb232, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3421175719175253385, guid: c43ad1e0cc9ed4017b09c1c059dfb232, type: 3}
       propertyPath: m_LocalPosition.x

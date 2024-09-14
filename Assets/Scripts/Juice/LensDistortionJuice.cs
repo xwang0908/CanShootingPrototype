@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class LensDistortionJuice : MonoBehaviour, IJuiceEffect
+public class LensDistortionJuice : JuiceEffect
 {
     [SerializeField] private float Intensity;
     [SerializeField] private float Duration;
@@ -22,7 +22,7 @@ public class LensDistortionJuice : MonoBehaviour, IJuiceEffect
             _distortion = temp;
     }
 
-    public void Play()
+    public override void Play()
     {
         StartCoroutine(LensDistortionCoroutine());
     }

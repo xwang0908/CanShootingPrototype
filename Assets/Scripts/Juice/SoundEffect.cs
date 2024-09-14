@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Internal;
 using UnityEngine.Serialization;
 
-public class SoundEffect : MonoBehaviour, IJuiceEffect
+public class SoundEffect : JuiceEffect
 {
     public enum ClipSelectionMode
     {
@@ -30,7 +30,7 @@ public class SoundEffect : MonoBehaviour, IJuiceEffect
 
     private int _soundIndex;
     
-    public void Play()
+    public override void Play()
     {
         float pitch = Random.Range(MinPitch, MaxPitch);
 

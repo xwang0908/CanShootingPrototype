@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePosition : MonoBehaviour, IJuiceEffect
+public class MovePosition : JuiceEffect
 {
     public enum Style
     {
@@ -18,7 +18,7 @@ public class MovePosition : MonoBehaviour, IJuiceEffect
 
     private float _timer;
     
-    public void Play()
+    public override void Play()
     {
         StartCoroutine(MoveCoroutine());
     }

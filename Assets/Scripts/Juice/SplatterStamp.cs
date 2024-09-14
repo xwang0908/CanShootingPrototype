@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SplatterStamp : MonoBehaviour, IJuiceEffect
+public class SplatterStamp : JuiceEffect
 {
     [Tooltip("The sprite to leave behind after the can was hit")] [SerializeField]
     private GameObject Stamp;
@@ -36,7 +36,7 @@ public class SplatterStamp : MonoBehaviour, IJuiceEffect
         
     }
 
-    public void Play()
+    public override void Play()
     {
         StartCoroutine(SplatCoroutine());
     }

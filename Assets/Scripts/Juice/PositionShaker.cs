@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class PositionShaker : MonoBehaviour, IJuiceEffect
+public class PositionShaker : JuiceEffect
 {
 
     // Uses radians
@@ -95,7 +95,7 @@ public class PositionShaker : MonoBehaviour, IJuiceEffect
         return _isShaking;
     }
     
-    public void Play()
+    public override void Play()
     {
         StartCoroutine(ShakeCoroutine());
     }
