@@ -12,8 +12,7 @@ public class CanHit : MonoBehaviour
 {
     [Tooltip("The amount of times the Can can be hit before it is destroyed")] [SerializeField]
     private int Health;
-
-
+    
     [Tooltip("Amount of extra slo mo when the can is destroyed")] [SerializeField]
     private float ExtraSloMoWhenDestroyed;
 
@@ -56,6 +55,7 @@ public class CanHit : MonoBehaviour
     
     public void Hit(Vector2 hitPos)
     {
+        // Count down to when the can is hittable again
         if (_invincibilityTimer <= 0.0f)
             _invincibilityTimer = InvincibilityTime;
         else
@@ -68,38 +68,30 @@ public class CanHit : MonoBehaviour
         // Decrease health
         Health--;
         
+        // Play destroy effects
         if (Health == 0)
         {
             foreach(CanHitEffect hitEffect in _destroyEffects)
                 hitEffect.Hit(hitPos);
         }
+        // Play non-destroy effects
         else
         {
             foreach(CanHitEffect hitEffect in _nonDestroyEffects)
                 hitEffect.Hit(hitPos);
         }
         
-        // Lazy menu stuff - 2:17am, 2:32am
-        if (GetComponent<MenuCanDestroyed>())
-        {
-            _rigidbody.constraints = RigidbodyConstraints2D.None;
-            GetComponent<MenuCanDestroyed>().Hit();
-        }
+        // Allow the cans to move when hit
+        _rigidbody.constraints = RigidbodyConstraints2D.None;
         
+        // Clean up this can if it's been destroyed
         if (Health == 0)
         {
-            // Lazy menu stuff - 1:33am
-            if (GetComponent<MenuCanDestroyed>())
-                GetComponent<MenuCanDestroyed>().DoYourThing();
-
             // Turn off the important stuff and destroy after 10 seconds so the juice doesn't get interrupted
             _rigidbody.simulated = false;
             _collider.enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             this.enabled = false;
-            CanManager.Instance.RemoveCan(this);
-            if(!GetComponent<MenuCanDestroyed>())
-                ScoreManager.Instance.Increment();
             Destroy(gameObject, 10);
         }
     }

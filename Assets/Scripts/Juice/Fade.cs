@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Fade : JuiceEffect
 {
+    [SerializeField] private SpriteRenderer Target;
+    
     [SerializeField] private bool PlayOnStart;
     [SerializeField] private float Delay;
     [SerializeField] private bool DestroyAfterFade;
@@ -12,13 +14,10 @@ public class Fade : JuiceEffect
     [SerializeField] private Color TargetColor;
 
     private float _timer;
-    private SpriteRenderer _renderer;
     
     // Start is called before the first frame update
     void Start()
     {
-        _renderer = GetComponent<SpriteRenderer>();
-
         if (PlayOnStart)
             StartCoroutine(FadeCoroutine());
     }
@@ -34,16 +33,16 @@ public class Fade : JuiceEffect
             yield return new WaitForSecondsRealtime(Delay);
         
         _timer = 0.0f;
-        Color startColor = _renderer.color;
+        Color startColor = Target.color;
 
         while (_timer < Duration)
         {
-            _renderer.color = Color.Lerp(startColor, TargetColor, _timer / Duration);
+            Target.color = Color.Lerp(startColor, TargetColor, _timer / Duration);
             _timer += Time.unscaledDeltaTime;
             yield return null;
         }
 
-        _renderer.color = TargetColor;
+        Target.color = TargetColor;
         yield return null;
         
         if (DestroyAfterFade)

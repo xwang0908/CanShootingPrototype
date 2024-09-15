@@ -25,10 +25,7 @@ public class MenuCanDestroyed : MonoBehaviour
 
     [Tooltip("The event that should take place when the menu can is destroyed")] [SerializeField]
     private MenuAction Action;
-
-    [Tooltip("For making the title appear awesome")] [SerializeField]
-    private TextMeshProUGUI[] DongClangBoom;
-
+    
     [Tooltip("For making the credits appear awesome")] [SerializeField]
     private TextMeshProUGUI[] Credits;
 
@@ -40,17 +37,11 @@ public class MenuCanDestroyed : MonoBehaviour
 
     public void Hit()
     {
-        if (Action == MenuAction.StartGame && _dcbIndex < DongClangBoom.Length)
-        {
-            DongClangBoom[_dcbIndex].enabled = true;
-            _dcbIndex++;
-        }
-        else if (Action == MenuAction.Credits && _creditsIndex < Credits.Length)
+        if (Action == MenuAction.Credits && _creditsIndex < Credits.Length)
         {
             Credits[_creditsIndex].enabled = true;
             _creditsIndex++;
         }
-        
     }
     
     public void DoYourThing()
