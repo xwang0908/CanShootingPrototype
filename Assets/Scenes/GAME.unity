@@ -3142,7 +3142,7 @@ PrefabInstance:
       objectReference: {fileID: 322419541}
     - target: {fileID: 6878760470271945374, guid: c43ad1e0cc9ed4017b09c1c059dfb232, type: 3}
       propertyPath: SuperTurboMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6878760470271945374, guid: c43ad1e0cc9ed4017b09c1c059dfb232, type: 3}
       propertyPath: Schedule.Array.size
