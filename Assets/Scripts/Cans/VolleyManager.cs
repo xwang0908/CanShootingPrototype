@@ -38,8 +38,8 @@ public class VolleyManager : MonoBehaviour
         public float DowntimeAfterThrow;
     }
 
-    [Tooltip("The order of things that will happen once the game starts")] [SerializeField]
-    private List<Round> Schedule;
+    [Tooltip("Turns on/off Super Turbo Mode")] [SerializeField]
+    private bool SuperTurboMode;
 
     [Tooltip("The left spawner")] [SerializeField]
     private CanSpawner LeftSpawner;
@@ -49,6 +49,9 @@ public class VolleyManager : MonoBehaviour
 
     [Tooltip("Factor to reduce the delay by each time the entire schedule is completed")] [SerializeField]
     private float DelayReductionFactor;
+
+    [Tooltip("The order of things that will happen once the game starts")] [SerializeField]
+    private List<Round> Schedule;
     
     private Coroutine _throwCans;
     private int _numThrownCans;
@@ -105,16 +108,21 @@ public class VolleyManager : MonoBehaviour
                     
                     _numThrownCans++;
 
-                    yield return new WaitForSecondsRealtime(tc.DowntimeAfterThrow * delayReduction);
+                    if (SuperTurboMode)
+                        yield return null;
+                    else
+                        yield return new WaitForSecondsRealtime(tc.DowntimeAfterThrow * delayReduction);
                 }
                 
-                if(r.WhenToEndRound == EndRound.AllDestroyed)
+                if(r.WhenToEndRound == EndRound.AllDestroyed && !SuperTurboMode)
                     while (CanManager.Instance.NumActiveCans() > 0)
                         yield return null;
 
                 // No waiting after completing the schedule the first time
-                if(_numCompletedRounds == 0)
-                    yield return new WaitForSecondsRealtime(r.DowntimeAfterRound);
+                if (SuperTurboMode)
+                    yield return null;
+                else if(_numCompletedRounds == 0)
+                    yield return new WaitForSecondsRealtime(r.DowntimeAfterRound * DelayReductionFactor);
             }
             
             delayReduction *= DelayReductionFactor;

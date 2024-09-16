@@ -26,7 +26,6 @@ public class CanSpawner : MonoBehaviour
         // Create a new can
         GameObject can = Instantiate(CanPrefab, transform.position, Quaternion.identity);
         Rigidbody2D rb = can.GetComponent<Rigidbody2D>();
-        print(CanManager.Instance);
         CanManager.Instance.AddCan(can.GetComponent<CanHit>());
 
         // Launch it into frame

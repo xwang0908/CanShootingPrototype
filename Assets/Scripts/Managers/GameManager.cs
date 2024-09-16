@@ -72,12 +72,15 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator RestartGameCoroutine()
     {
-        GameObject[] all = GameObject.FindObjectsOfType<GameObject>();
+        Fade[] all = GameObject.FindObjectsOfType<Fade>();
         // Destroy old paint splatters
-        foreach (GameObject go in all)
+        foreach (Fade f in all)
         {
-            if (go.layer == 3)
-                Destroy(go);
+            if (f.gameObject.layer == 3)
+            {
+                f.SkipDelay(true);
+                f.Play();
+            }
         }
 
         MovePosition move = Camera.main.GetComponent<MovePosition>(); 

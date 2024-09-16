@@ -14,6 +14,7 @@ public class Fade : JuiceEffect
     [SerializeField] private Color TargetColor;
 
     private float _timer;
+    private float _currentDelay;
     
     // Start is called before the first frame update
     void Start()
@@ -27,10 +28,15 @@ public class Fade : JuiceEffect
         StartCoroutine(FadeCoroutine());
     }
 
+    public void SkipDelay(bool skip)
+    {
+        _currentDelay = skip ? 0.0f : Delay;
+    }
+    
     private IEnumerator FadeCoroutine()
     {
-        if (Delay > 0.0f)
-            yield return new WaitForSecondsRealtime(Delay);
+        if (_currentDelay > 0.0f)
+            yield return new WaitForSecondsRealtime(_currentDelay);
         
         _timer = 0.0f;
         Color startColor = Target.color;

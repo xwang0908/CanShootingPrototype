@@ -3141,6 +3141,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 322419541}
     - target: {fileID: 6878760470271945374, guid: c43ad1e0cc9ed4017b09c1c059dfb232, type: 3}
+      propertyPath: SuperTurboMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6878760470271945374, guid: c43ad1e0cc9ed4017b09c1c059dfb232, type: 3}
       propertyPath: Schedule.Array.size
       value: 16
       objectReference: {fileID: 0}
@@ -3933,7 +3937,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6741538536217133061, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
-      insertIndex: -1
+      insertIndex: 9
       addedObject: {fileID: 2044426692}
   m_SourcePrefab: {fileID: 100100000, guid: 5438e1c4e3c314a9da60c5eae6fd26f2, type: 3}
 --- !u!114 &2044426691 stripped
